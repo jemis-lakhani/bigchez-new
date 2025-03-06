@@ -57,9 +57,9 @@ const Journals = () => {
         {data?.map((item, index) => (
           <div
             key={index}
-            className="group relative flex h-[500px] flex-col gap-5 rounded-3xl border-[1px] border-[#E7E5EA] p-6 hover:!bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)]"
+            className="group relative flex flex-col gap-5 rounded-3xl border-[1px] border-[#E7E5EA] p-6 pb-12 hover:!bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)]"
           >
-            <div className="relative h-[250px] rounded-2xl group-hover:border-2 group-hover:border-white">
+            <div className="relative rounded-2xl group-hover:border-2 group-hover:border-white">
               <div className="h-full overflow-hidden rounded-2xl">
                 <img src={item?.image} className="h-full w-full object-cover" />
               </div>

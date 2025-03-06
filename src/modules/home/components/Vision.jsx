@@ -4,7 +4,7 @@ import React from "react";
 
 const Vision = () => {
   return (
-    <div className="relative flex h-[600px] items-center justify-center">
+    <div className="relative flex items-center justify-center py-20 lg:py-28 2xl:py-32">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: 'url("./vision/bg.png")' }}
@@ -20,7 +20,7 @@ const Vision = () => {
         <div className="mt-2 flex justify-center">
           <HRLine />
         </div>
-        <span className="max-w-[750px] text-center text-lg font-medium italic lg:text-3xl">
+        <span className="text-center text-lg font-medium italic lg:text-3xl 2xl:max-w-[40%]">
           At <span className="font-bold">Bigchez</span>, we turn your ideas into
           impact—
           <br />

@@ -18,7 +18,7 @@ const Hero = () => {
       ></div>
       <div className="main-container relative z-30 flex flex-col pt-4">
         <div className="flex flex-row items-center justify-center lg:justify-between">
-          <img src="/logo.png" className="w-[260px] object-contain lg:w-auto" />
+          <img src="/logo.png" className="w-[65%] object-contain lg:w-auto" />
           <div className="hidden items-center gap-7 rounded-[50px] border-1 px-9 py-4 lg:flex">
             <div
               className={cn(
@@ -41,8 +41,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col items-center gap-20 py-24 text-center lg:mx-auto lg:w-[876px]">
-          <div className="text-[65px] leading-none lg:text-[140px]">
+        <div className="relative mx-auto flex flex-col items-center gap-20 py-24 text-center xl:w-[70%]">
+          <div className="text-[65px] leading-none capitalize lg:text-[140px]">
             <span className="font-semibold">
               <span className="relative">
                 Your&nbsp;

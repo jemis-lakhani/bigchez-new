@@ -41,7 +41,7 @@ const FAQs = () => {
 
       <HRLine />
 
-      <div className="mx-auto flex w-full max-w-[865px] flex-col">
+      <div className="mx-auto flex w-full flex-col xl:max-w-[70%] 2xl:max-w-[75%]">
         {items.map((item, index) => (
           <div
             key={index}
@@ -73,7 +73,7 @@ const FAQs = () => {
               className={cn(
                 "origin-top transform overflow-hidden transition-all ease-in-out",
                 openIndex === index
-                  ? "max-h-[500px] scale-y-100 opacity-100 duration-500"
+                  ? "max-h-screen scale-y-100 opacity-100 duration-500"
                   : "max-h-0 scale-y-95 opacity-0 duration-300",
               )}
             >

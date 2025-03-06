@@ -40,7 +40,7 @@ const Buisness = () => {
 
   return (
     <div className="bg-secondary py-16 lg:py-32">
-      <div className="main-container flex grid-cols-1 flex-col gap-14 md:grid md:grid-cols-2 xl:grid-cols-3">
+      <div className="main-container flex grid-cols-1 flex-col gap-7 md:grid md:grid-cols-2 lg:gap-14 xl:grid-cols-3">
         <div className="flex flex-col gap-5">
           <div className="text-[44px] leading-[60px] lg:text-[50px]">
             <span className="font-bold">Transform Your</span>
@@ -57,8 +57,7 @@ const Buisness = () => {
         {data?.map((item, index) => (
           <div
             key={index}
-            className="group border-secondary hover:!border-primary relative mx-2 h-[360px] overflow-hidden rounded-[30px] border bg-white"
-            // className="group border-secondary hover:!border-primary relative mx-2 hidden h-[360px] overflow-hidden rounded-[30px] border bg-white lg:block"
+            className="group border-secondary hover:!border-primary relative mx-2 overflow-hidden rounded-[30px] border bg-white py-24"
           >
             <div
               className="absolute inset-0 rounded-[30px] bg-cover bg-center opacity-0 transition-all duration-500 group-hover:scale-110 group-hover:opacity-100"

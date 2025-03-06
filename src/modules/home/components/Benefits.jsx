@@ -65,7 +65,7 @@ const Benefits = () => {
       {/* Mobile Screen */}
       <div className="main-container flex flex-col gap-8 lg:hidden">
         <div className="flex gap-3">
-          <div className="w-[158px] rotate-270">
+          <div className="max-w-[158px] rotate-270">
             <img className="scale-105" src="./benefits/availability.png" />
           </div>
           <div className="flex flex-1 flex-col justify-center gap-2">
@@ -86,12 +86,12 @@ const Benefits = () => {
               You&apos;ll have complete control over your software.
             </span>
           </div>
-          <div className="w-[158px] rotate-270">
+          <div className="max-w-[158px] rotate-270">
             <img className="" src="./benefits/access.png" />
           </div>
         </div>
         <div className="flex gap-3">
-          <div className="w-[158px] rotate-270">
+          <div className="max-w-[158px] rotate-270">
             <img className="scale-105" src="./benefits/reliability.png" />
           </div>
           <div className="flex flex-1 flex-col justify-center gap-2">
@@ -112,12 +112,12 @@ const Benefits = () => {
               Stay informed at every step.
             </span>
           </div>
-          <div className="w-[158px] rotate-270">
+          <div className="max-w-[158px] rotate-270">
             <img className="" src="./benefits/communication.png" />
           </div>
         </div>
         <div className="flex gap-3">
-          <div className="w-[158px] rotate-270">
+          <div className="max-w-[158px] rotate-270">
             <img className="scale-105" src="./benefits/tech.png" />
           </div>
           <div className="flex flex-1 flex-col justify-center gap-2">
