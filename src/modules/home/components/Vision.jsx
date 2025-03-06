@@ -11,8 +11,8 @@ const Vision = () => {
       ></div>
 
       <div className="main-container z-1 flex flex-col items-center gap-8 text-white">
-        <span className="text-center text-[34px] font-bold lg:text-[50px]">
-          Empowering&nbsp;
+        <span className="flex flex-wrap items-center justify-center gap-2 text-center text-[34px] leading-none font-bold lg:text-[50px]">
+          Empowering
           <span className="blue-gradient-bg rounded-[10px] px-1">
             Your Vision
           </span>
@@ -20,7 +20,7 @@ const Vision = () => {
         <div className="mt-2 flex justify-center">
           <HRLine />
         </div>
-        <span className="text-center text-lg font-medium italic lg:text-3xl 2xl:max-w-[40%]">
+        <span className="text-center text-lg font-medium italic lg:text-3xl">
           At <span className="font-bold">Bigchez</span>, we turn your ideas into
           impact—
           <br />

@@ -15,11 +15,11 @@ const Careers = () => {
       <div className="relative z-10 mx-2 flex h-full w-full flex-col items-center justify-center gap-8 rounded-4xl border border-white bg-[#182844] py-8 lg:w-[930px] lg:rounded-[50px] lg:py-30">
         <div
           className={cn(
-            "relative z-2 flex items-center text-[46px] leading-none text-white lg:text-[80px] lg:leading-[60px]",
+            "relative z-2 flex flex-wrap items-center justify-center gap-2 text-[46px] leading-none text-white lg:text-[80px] lg:leading-[60px]",
             outfit.className,
           )}
         >
-          Become A&nbsp;
+          Become A
           <img
             src="./careers/chezzer.png"
             className="h-[33px] object-contain lg:h-auto"

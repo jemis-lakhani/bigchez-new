@@ -63,7 +63,7 @@ const Journals = () => {
               <div className="h-full overflow-hidden rounded-2xl">
                 <img src={item?.image} className="h-full w-full object-cover" />
               </div>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-full bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] px-4 py-1 text-sm font-semibold text-white uppercase group-hover:!bg-[linear-gradient(0deg,#fff_0%,#fff_100%)] group-hover:text-[#f57c00]">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-full bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] px-4 py-2 text-xs font-semibold text-white uppercase group-hover:!bg-[linear-gradient(0deg,#fff_0%,#fff_100%)] group-hover:text-[#f57c00]">
                 {item?.badgeTitle}
               </div>
             </div>
