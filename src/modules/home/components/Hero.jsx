@@ -41,7 +41,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col items-center gap-20 py-24 text-center">
+        <div className="relative flex flex-col items-center gap-20 py-24 text-center lg:mx-auto lg:w-[876px]">
           <div className="text-[65px] leading-none lg:text-[140px]">
             <span className="font-semibold">
               <span className="relative">
@@ -54,7 +54,7 @@ const Hero = () => {
             </span>
             <br />
             <div className="font-bold uppercase">
-              our
+              our&nbsp;
               <span className="text-secondary-1 relative">
                 Design
                 <span className="absolute right-0 bottom-0 -z-1">

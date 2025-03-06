@@ -13,16 +13,16 @@
   --text-secondary-1: #6a1b9a;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
-    --primary: #f57c00;
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
     --background-secondary: #f8f9fd;
+    --foreground: #171717;
+    --primary: #f57c00;
     --text-secondary: #2b2343;
     --text-secondary-1: #6a1b9a;
   }
-}
+} */
 
 body {
   color: var(--foreground);
