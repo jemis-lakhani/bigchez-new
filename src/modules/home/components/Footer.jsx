@@ -78,22 +78,26 @@ const Footer = () => {
     <div className="bg-secondary py-10 lg:py-20">
       <div className="main-container flex flex-col gap-20">
         <div className="hidden w-full flex-wrap justify-center gap-5 lg:flex lg:justify-between">
-          {Object.entries(data).map(([key, obj], index) => (
-            <div key={index} className="text-secondary flex flex-col gap-6">
-              <span className={titleClass}>{obj.title}</span>
-              <div className="flex flex-col gap-3">
-                {obj?.items?.map((item) => (
-                  <Link
-                    href={item.link}
-                    className={itemClasses}
-                    key={item.title}
-                  >
-                    {item.title}
-                  </Link>
-                ))}
+          {Object.entries(data).map(([key, obj], index) => {
+            return obj?.items?.length ? (
+              <div key={index} className="text-secondary flex flex-col gap-6">
+                <span className={titleClass}>{obj.title}</span>
+                <div className="flex flex-col gap-3">
+                  {obj?.items?.map((item) => (
+                    <Link
+                      href={item.link}
+                      className={itemClasses}
+                      key={item.title}
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ) : (
+              ""
+            );
+          })}
           <div className="text-secondary flex flex-col gap-6">
             <span className={titleClass}>Contact Sales</span>
             <div className="flex flex-col gap-3">
