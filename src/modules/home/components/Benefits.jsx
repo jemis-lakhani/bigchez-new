@@ -33,7 +33,7 @@ const Benefits = () => {
         </div>
         <div className="mt-6 grid grid-cols-14">
           <div className="col-span-3 flex flex-col justify-start gap-2 text-2xl">
-            <span className="blue-gradient-text text-center font-extrabold text-transparent">
+            <span className="text-blue-gradient text-center font-extrabold text-transparent">
               24/7 Availability:
             </span>
             <span className="text-secondary text-center font-medium">
@@ -53,7 +53,7 @@ const Benefits = () => {
           <div></div>
           <div></div>
           <div className="col-span-3 flex flex-col justify-start gap-2 text-2xl">
-            <span className="blue-gradient-text text-center font-extrabold">
+            <span className="text-blue-gradient text-center font-extrabold">
               Latest Technology:
             </span>
             <span className="text-secondary text-center font-medium">
@@ -69,7 +69,7 @@ const Benefits = () => {
             <img className="scale-105" src="./benefits/availability.png" />
           </div>
           <div className="flex flex-1 flex-col justify-center gap-2">
-            <span className="blue-gradient-text text-left text-xl font-extrabold text-transparent">
+            <span className="text-blue-gradient text-left text-xl font-extrabold text-transparent">
               24/7 Availability:
             </span>
             <span className="text-secondary text-left font-medium">
@@ -121,7 +121,7 @@ const Benefits = () => {
             <img className="scale-105" src="./benefits/tech.png" />
           </div>
           <div className="flex flex-1 flex-col justify-center gap-2">
-            <span className="blue-gradient-text text-left text-xl font-extrabold text-transparent">
+            <span className="text-blue-gradient text-left text-xl font-extrabold text-transparent">
               Latest Technology:
             </span>
             <span className="text-secondary text-left font-medium">

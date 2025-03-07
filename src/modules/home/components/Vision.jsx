@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import HRLine from "@/components/ui/HRLine";
+import { cn } from "@/lib/utils";
 import React from "react";
 
 const Vision = () => {
@@ -28,9 +29,7 @@ const Vision = () => {
           <br /> together to bring your
           <span className="font-semibold">vision to life.</span>
         </span>
-        <Button className="!px-12 !py-5 text-base lg:!px-18 lg:!py-6 lg:!text-2xl">
-          Learn More
-        </Button>
+        <Button className={cn("btn-h-86")}>Learn More</Button>
       </div>
     </div>
   );

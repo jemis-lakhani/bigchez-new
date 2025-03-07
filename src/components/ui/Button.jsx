@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 import React from "react";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold cursor-pointer px-6 py-3 focus:ring-0 focus:outline-none",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold cursor-pointer px-12 py-4 focus:ring-0 focus:outline-none capitalize",
   {
     variants: {
       variant: {

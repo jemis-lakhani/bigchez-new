@@ -4,7 +4,7 @@ import { useState } from "react";
 import { IoIosArrowForward, IoMdClose } from "react-icons/io";
 
 const Menu = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [expandedItem, setExpandedItem] = useState(null);
 
   const menuItems = [
@@ -18,15 +18,15 @@ const Menu = () => {
   ];
 
   return (
-    <div className="fixed top-1/2 z-40 flex flex-col lg:top-1/4 lg:left-0">
+    <div className="fixed top-1/2 right-0 left-auto z-40 flex flex-col lg:top-1/4 lg:!right-auto lg:!left-0">
       <button
-        className="blue-gradient-bg absolute top-0 flex h-10 w-10 cursor-pointer items-center justify-center text-white shadow-md focus:outline-none lg:left-full lg:h-15 lg:w-15 lg:rounded-r-lg"
+        className="blue-gradient-bg absolute top-0 right-full flex h-10 w-10 cursor-pointer items-center justify-center rounded-l-lg rounded-r-none text-white shadow-md focus:outline-none lg:!left-full lg:h-15 lg:w-15 lg:rounded-l-none lg:rounded-r-lg"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
-          <IoMdClose className="w:-12 h-8 w-8 lg:h-12" />
+          <IoMdClose className="h-8 w-8 lg:h-12 lg:w-12" />
         ) : (
-          <IoIosArrowForward className="w:-12 h-8 w-8 rotate-180 lg:h-12 lg:rotate-0" />
+          <IoIosArrowForward className="h-8 w-8 rotate-180 lg:h-12 lg:w-12 lg:rotate-0" />
         )}
       </button>
       <div
@@ -42,7 +42,7 @@ const Menu = () => {
                 className={cn(
                   "flex w-full cursor-pointer items-center justify-start gap-2 px-4 py-2 text-left text-xl font-medium",
                   expandedItem === index
-                    ? "blue-gradient-text"
+                    ? "text-blue-gradient"
                     : "text-secondary",
                 )}
                 onClick={() =>

@@ -1,33 +1,130 @@
-import React from "react";
+"use client";
+
+import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
+import { Outfit } from "next/font/google";
+import { useForm } from "react-hook-form";
+
+const outfit = Outfit({ subsets: ["latin"], display: "swap" });
+
+const inputClasses =
+  "b-2 text-[#BDB9B9] w-full rounded-lg bg-white p-3 text-sm font-extralight focus:!border-2 focus:!border-black focus:outline-none lg:rounded-2xl lg:p-4 lg:text-[30px]";
 
 const ConnectWithUs = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log("Form Data: ", data);
+  };
+
   return (
-    <div className="relative">
-      <div
-        className="absolute inset-0"
-        style={{ backgroundImage: 'url("./footer/bg.jpeg' }}
-      ></div>
-      <div className="main-container relative z-20">
-        <div className="grid grid-cols-3 gap-24 pt-20 pb-50">
-          <div className="bg-primary flex items-center justify-center gap-5 rounded-full px-6 py-4">
-            <img src="./contact-us/whatsapp.svg" />
-            <span className="text-2xl font-semibold text-white">
-              Connect on WhatsApp
-            </span>
-          </div>
-          <div className="relative flex items-center justify-center gap-5 rounded-full bg-white/10 px-6 py-4 backdrop-blur-[32px]">
-            <img src="./contact-us/phone.svg" />
-            <span className="text-2xl font-semibold text-white">
-              Call us directly
-            </span>
-          </div>
-          <div className="flex items-center justify-center gap-5 rounded-full bg-white/10 px-6 py-4 backdrop-blur-[32px]">
-            <img src="./contact-us/mail.svg" />
-            <span className="text-2xl font-semibold text-white">Email us</span>
+    <>
+      <div className="relative">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url("./footer/bg.jpeg")' }}
+        ></div>
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="main-container relative z-20">
+          <div className="flex justify-around gap-10 pt-20 pb-72 lg:grid lg:grid-cols-3">
+            <div className="bg-primary flex aspect-square w-20 items-center justify-center gap-5 rounded-full p-4 backdrop-blur-[32px] lg:aspect-auto lg:w-full lg:px-6 lg:py-4">
+              <img src="./contact-us/whatsapp.svg" />
+              <span className="hidden text-2xl font-semibold text-white capitalize lg:block">
+                Connect on WhatsApp
+              </span>
+            </div>
+            <div className="relative flex aspect-square w-20 items-center justify-center gap-5 rounded-full bg-white/10 p-4 backdrop-blur-[32px] lg:aspect-auto lg:w-full lg:px-6 lg:py-4">
+              <img src="./contact-us/phone.svg" />
+              <span className="hidden text-2xl font-semibold text-white capitalize lg:block">
+                Call us directly
+              </span>
+            </div>
+            <div className="relative flex aspect-square w-20 items-center justify-center gap-5 rounded-full bg-white/10 p-4 backdrop-blur-[32px] lg:aspect-auto lg:w-full lg:px-6 lg:py-4">
+              <img src="./contact-us/mail.svg" />
+              <span className="hidden text-2xl font-semibold text-white capitalize lg:block">
+                Email us
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/*  Form */}
+      <div className="relative z-30 -mt-56 mb-56 flex flex-col items-center gap-10">
+        <span className="text-center text-[50px] font-bold text-white capitalize">
+          Connect with us
+        </span>
+        <div className="relative mx-auto w-[90%] lg:w-[65%] 2xl:w-[42%]">
+          <div className="absolute right-0 bottom-0 -z-10 aspect-square w-1/3 translate-x-1/8 translate-y-1/4 rounded-full bg-[#FFA64C] lg:-right-7 lg:-bottom-7 lg:w-1/2 lg:translate-x-1/6 lg:translate-y-1/8"></div>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="relative w-full overflow-hidden rounded-2xl lg:rounded-[35px]"
+            style={{ border: "2px solid rgba(250, 146, 19, 0.2)" }}
+          >
+            <div
+              className="absolute inset-0 bg-cover"
+              style={{ backgroundImage: 'url("./contact-us/form-bg.png")' }}
+            ></div>
+            <div className="absolute inset-0 bg-white/90"></div>
+
+            <div className="relative flex flex-col gap-6 p-8 lg:p-10">
+              <input
+                type="text"
+                placeholder="Name"
+                {...register("name", { required: "Name is required" })}
+                className={cn(inputClasses, outfit.className)}
+              />
+              {errors.name && (
+                <p className="text-sm text-red-500">{errors.name.message}</p>
+              )}
+
+              <input
+                type="email"
+                placeholder="Email"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Invalid email format",
+                  },
+                })}
+                className={cn(inputClasses, outfit.className)}
+              />
+              {errors.email && (
+                <p className="text-sm text-red-500">{errors.email.message}</p>
+              )}
+
+              <input
+                type="text"
+                placeholder="Subject"
+                {...register("subject", { required: "Subject is required" })}
+                className={cn(inputClasses, outfit.className)}
+              />
+              {errors.subject && (
+                <p className="text-sm text-red-500">{errors.subject.message}</p>
+              )}
+
+              <textarea
+                placeholder="Message :"
+                {...register("message", { required: "Message is required" })}
+                className={cn("h-40", inputClasses, outfit.className)}
+              />
+              {errors.message && (
+                <p className="text-sm text-red-500">{errors.message.message}</p>
+              )}
+
+              <Button type="submit" className="btn-h-86 mt-2">
+                Submit
+              </Button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import HRLine from "@/components/ui/HRLine";
+import { cn } from "@/lib/utils";
 
 const Services = () => {
   return (
@@ -30,9 +31,7 @@ const Services = () => {
         <span className="text-secondary-1 mt-2 text-center text-lg font-bold lg:text-2xl">
           ❝ Because innovation should empower, not exclude.❞
         </span>
-        <Button className="!px-12 !py-5 text-base lg:!px-18 lg:!py-6 lg:!text-2xl">
-          Explore Our Services
-        </Button>
+        <Button className={cn("btn-h-86")}>Explore Our Services</Button>
       </div>
     </div>
   );

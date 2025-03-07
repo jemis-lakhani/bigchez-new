@@ -11,6 +11,7 @@
   --primary: #f57c00;
   --text-secondary: #2b2343;
   --text-secondary-1: #6a1b9a;
+  --text-secondary-2: #6a2c8f;
 }
 
 /* @media (prefers-color-scheme: light) {
@@ -53,8 +54,12 @@ body {
 }
 
 /* borders */
-.border-1 {
+.b-1 {
   @apply border-[1px] border-[#D4D4D4];
+}
+
+.b-2 {
+  @apply border-[1px] border-[#D9D9D9];
 }
 
 .border-primary {
@@ -66,7 +71,18 @@ body {
 }
 
 .ring-primary {
-  --tw-ring-color: rgba(245, 124, 0, 0.1);
+  --tw-ring-color: rgba(165, 105, 46, 0.1);
+}
+
+.primary-gradient-border {
+  border: 1px solid;
+  border-radius: 50px;
+  border-image-source: linear-gradient(
+    96.26deg,
+    rgba(255, 167, 38, 0.2) 0%,
+    rgba(245, 124, 0, 0.2) 50%
+  );
+  border-image-slice: 1;
 }
 
 /* text */
@@ -82,7 +98,19 @@ body {
   color: var(--text-secondary-1);
 }
 
-.blue-gradient-text {
+.text-secondary-2 {
+  color: var(--text-secondary-2);
+}
+
+.text-primary-gradient {
+  background: linear-gradient(96.26deg, #ffa726 0%, #f57c00 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-blue-gradient {
   background: linear-gradient(to right, #0993ab 0%, #09748d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -94,14 +122,6 @@ body {
   background: linear-gradient(96.26deg, #0993ab 0%, #09748d 50%);
 }
 
-.text-gradient {
-  background: linear-gradient(96.26deg, #6a1b9a 0%, #6a1b9a 50%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-
-.rounded-20 {
-  @apply rounded-[20px];
+.btn-h-86 {
+  @apply !px-12 !py-5 text-base lg:!px-18 lg:!py-6.5 lg:!text-2xl;
 }

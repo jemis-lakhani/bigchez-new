@@ -38,9 +38,7 @@ const Careers = () => {
           We’re looking for innovators, creators, and problem
           <br /> solvers. Ready to build the future of tech with us?
         </span>
-        <Button className="!px-12 !py-5 text-base lg:!px-18 lg:!py-6 lg:!text-2xl">
-          Explore careers
-        </Button>
+        <Button className={cn("btn-h-86")}>Explore careers</Button>
       </div>
     </div>
   );

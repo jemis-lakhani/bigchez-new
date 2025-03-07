@@ -1,8 +1,9 @@
 "use client";
-
 import { Button } from "@/components/ui/Button";
 import HRLine from "@/components/ui/HRLine";
+import { cn } from "@/lib/utils";
 import { BsArrowUpRightCircle } from "react-icons/bs";
+import { IoArrowDownCircleOutline } from "react-icons/io5";
 
 const Buisness = () => {
   const data = [
@@ -39,7 +40,7 @@ const Buisness = () => {
   ];
 
   return (
-    <div className="bg-secondary py-16 lg:py-32">
+    <div className="bg-secondary flex flex-col items-center gap-20 py-16 lg:py-32">
       <div className="main-container flex grid-cols-1 flex-col gap-7 md:grid md:grid-cols-2 lg:gap-14 xl:grid-cols-3">
         <div className="flex flex-col gap-5">
           <div className="text-[44px] leading-[60px] lg:text-[50px]">
@@ -101,6 +102,10 @@ const Buisness = () => {
           </div>
         ))}
       </div>
+      <Button className={cn("btn-h-86")}>
+        show more
+        <IoArrowDownCircleOutline size={32} />
+      </Button>
     </div>
   );
 };
