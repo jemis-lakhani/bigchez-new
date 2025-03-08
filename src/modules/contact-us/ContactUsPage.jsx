@@ -1,10 +1,10 @@
+import Copytight from "@/components/global/Copyright";
 import FAQs from "@/components/shared/FAQs";
+import Footer from "@/components/shared/Footer";
 import ConnectWithUs from "./components/ConnectWithUs";
 import Hero from "./components/Hero";
 import PartnerWithUs from "./components/PartnerWithUs";
 import Process from "./components/Process";
-import Footer from "./components/Footer";
-import Copytight from "@/components/global/Copyright";
 
 const ContactUsPage = () => {
   return (

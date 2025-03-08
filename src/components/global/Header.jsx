@@ -12,12 +12,13 @@ const activeClass = "text-primary-gradient font-bold";
 const Header = () => {
   const pathname = usePathname();
   const pathSegment = pathname.split("/").filter(Boolean).pop();
-  console.log(pathSegment);
 
   return (
     <div className="flex flex-row items-center justify-center lg:justify-between">
       <div className="flex justify-center object-contain">
-        <img src="/logo.png" className="w-[65%] lg:w-auto" />
+        <Link href="/">
+          <img src="/logo.png" className="w-[65%] lg:w-auto" />
+        </Link>
       </div>
       <div className="b-1 hidden items-center gap-7 rounded-[50px] px-9 py-4 lg:flex">
         <div
@@ -40,7 +41,12 @@ const Header = () => {
             Contact Us
           </Link>
           <div className="h-auto w-[1px] bg-black font-semibold"></div>
-          <Link href="/about">Blog</Link>
+          <Link
+            href="/blog"
+            className={cn(pathSegment === "blog" && activeClass)}
+          >
+            Blog
+          </Link>
         </div>
         <Button>
           <img src="/login.png" className="object-contain" />

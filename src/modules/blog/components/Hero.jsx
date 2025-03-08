@@ -10,17 +10,16 @@ const Hero = () => {
     <div className="relative">
       <div className="main-container relative z-30 flex flex-col pt-4">
         <Header />
-        <div className="relative mx-auto flex w-full flex-col items-center gap-8 py-14 text-center lg:py-30 xl:w-[75%]">
+        <div className="relative mx-auto flex flex-col items-center gap-8 py-14 text-center lg:py-30 xl:w-[75%]">
           <div
             className={cn(
-              "text-[28px] leading-none font-semibold capitalize lg:text-[50px]",
+              "flex flex-wrap items-center justify-center gap-2 text-center text-4xl leading-none font-semibold lg:text-[58px]",
               syne.className,
             )}
           >
-            Your vision deserves the best.
-            <br />
-            <span className="text-secondary-1 relative font-bold">
-              Let’s bring it to life
+            Our
+            <span className="blue-gradient-bg ml-1 rounded-[10px] px-2 font-bold text-white">
+              Impactful Stories
             </span>
           </div>
           <HRLine1 />

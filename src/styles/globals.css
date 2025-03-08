@@ -103,7 +103,7 @@ body {
 }
 
 .text-primary-gradient {
-  background: linear-gradient(96.26deg, #ffa726 0%, #f57c00 50%);
+  background: linear-gradient(96.26deg, #ffa726 0%, var(--primary) 50%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -124,4 +124,15 @@ body {
 
 .btn-h-86 {
   @apply !px-12 !py-5 text-base lg:!px-18 lg:!py-6.5 lg:!text-2xl;
+}
+
+.filter-container::before {
+  content: "";
+  display: block;
+  height: 9px;
+  width: 60px;
+  background-color: var(--primary);
+  position: absolute;
+  top: 0;
+  left: 81px;
 }
