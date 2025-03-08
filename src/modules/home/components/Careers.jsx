@@ -7,7 +7,7 @@ const outfit = Outfit({ subsets: ["latin"], display: "swap" });
 
 const Careers = () => {
   return (
-    <div className="relative flex items-center justify-center py-32">
+    <div id="carriers" className="relative flex items-center justify-center py-32">
       <div
         className="absolute inset-0 bg-center bg-no-repeat"
         style={{ backgroundImage: 'url("./careers/bg.png")' }}

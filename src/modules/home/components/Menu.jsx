@@ -8,14 +8,25 @@ const Menu = () => {
   const [expandedItem, setExpandedItem] = useState(null);
 
   const menuItems = [
-    { title: "Transform Business", subItems: ["jemis"] },
-    { title: "Impact Journals", subItems: [] },
-    { title: "Promises", subItems: [] },
-    { title: "Vision", subItems: [] },
-    { title: "Affordable", subItems: [] },
-    { title: "Carriers", subItems: [] },
-    { title: "FAQ", subItems: [] },
+    {
+      title: "Transform Business",
+      link: "transform-business",
+      subItems: ["jemis"],
+    },
+    { title: "Impact Journals", link: "impact-journal", subItems: [] },
+    { title: "Promises", link: "promises", subItems: [] },
+    { title: "Vision", link: "vision", subItems: [] },
+    { title: "Affordable", link: "affordable", subItems: [] },
+    { title: "Careers", link: "carriers", subItems: [] },
+    { title: "FAQ", link: "faq", subItems: [] },
   ];
+
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="fixed top-1/2 right-0 left-auto z-40 flex flex-col lg:top-1/4 lg:!right-auto lg:!left-0">
@@ -45,9 +56,10 @@ const Menu = () => {
                     ? "text-blue-gradient"
                     : "text-secondary",
                 )}
-                onClick={() =>
-                  setExpandedItem(expandedItem === index ? null : index)
-                }
+                onClick={() => {
+                  handleScroll(item.link);
+                  setExpandedItem(expandedItem === index ? null : index);
+                }}
               >
                 <IoIosArrowForward size={20} />
                 {item.title}

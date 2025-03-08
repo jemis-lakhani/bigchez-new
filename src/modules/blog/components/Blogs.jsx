@@ -11,7 +11,7 @@ const data = [
     author: "By webteck",
     title:
       "Mastering ChatGPT Blog Creation: Dos and Don'ts for SaaS Marketing Managers",
-    desc: "Whether you’re a business aiming to enhance your digital presence or an individual with a groundbreaking idea, we’re here to help you achieve your goals. read more",
+    desc: "Whether you’re a business aiming to enhance your digital presence or an individual with a groundbreaking idea, we’re here to help you achieve your goals.",
     link: "#",
   },
   {
@@ -21,7 +21,7 @@ const data = [
     author: "By webteck",
     title:
       "Mastering ChatGPT Blog Creation: Dos and Don'ts for SaaS Marketing Managers",
-    desc: "Whether you’re a business aiming to enhance your digital presence or an individual with a groundbreaking idea, we’re here to help you achieve your goals. read more",
+    desc: "Whether you’re a business aiming to enhance your digital presence or an individual with a groundbreaking idea, we’re here to help you achieve your goals.",
     link: "#",
   },
   {
@@ -31,7 +31,7 @@ const data = [
     author: "By webteck",
     title:
       "Mastering ChatGPT Blog Creation: Dos and Don'ts for SaaS Marketing Managers",
-    desc: "Whether you’re a business aiming to enhance your digital presence or an individual with a groundbreaking idea, we’re here to help you achieve your goals. read more",
+    desc: "Whether you’re a business aiming to enhance your digital presence or an individual with a groundbreaking idea, we’re here to help you achieve your goals.",
     link: "#",
   },
 ];

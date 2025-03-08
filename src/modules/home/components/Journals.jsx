@@ -30,7 +30,10 @@ const Journals = () => {
   ];
 
   return (
-    <div className="main-container flex flex-col gap-20 py-16 lg:py-32">
+    <div
+      id="impact-journal"
+      className="main-container flex flex-col gap-20 py-16 lg:py-32"
+    >
       <div className="flex items-center">
         <div className="flex flex-1 flex-col gap-5">
           <span className="flex items-center text-[40px] leading-[60px] lg:text-[50px]">

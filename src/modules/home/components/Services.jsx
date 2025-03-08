@@ -6,6 +6,7 @@ const Services = () => {
   return (
     <div className="bg-secondary relative py-16 lg:py-32">
       <div
+        id="affordable"
         className="absolute inset-0 bg-cover bg-center opacity-5"
         style={{ backgroundImage: 'url("./services/bg.png' }}
       ></div>

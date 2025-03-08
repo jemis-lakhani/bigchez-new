@@ -1,6 +1,6 @@
 const Benefits = () => {
   return (
-    <div className="bg-secondary py-16 lg:py-32">
+    <div id="promises" className="bg-secondary py-16 lg:py-32">
       {/* Laptop Screen */}
       <div className="main-container hidden lg:block">
         <div className="mb-6 grid grid-cols-7">

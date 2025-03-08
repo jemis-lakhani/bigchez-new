@@ -101,39 +101,43 @@ const Card = ({ data }) => {
         </div>
       </div>
       <div className="text-base font-medium lg:text-[28px]">{data.title}</div>
-      <div
-        className="text-xs leading-4 text-[#141D38] group-hover:!text-white lg:text-xl lg:leading-9"
-        dangerouslySetInnerHTML={{ __html: data?.desc }}
-      />
-      <Link
-        href={data?.link ?? "#"}
-        className="flex items-center text-xs font-semibold text-[#141D38] group-hover:!text-white lg:text-xl"
-      >
-        Learn More
-        <svg
-          width="25"
-          height="8"
-          viewBox="0 0 25 8"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="mt-1 ml-1 fill-[#141D38] group-hover:fill-white"
+      <div className="text-xs leading-4 text-[#141D38] group-hover:!text-white lg:text-xl lg:leading-9">
+        {data?.desc}
+        <Link href="#" className="border-b">
+          &nbsp;read more
+        </Link>
+      </div>
+      <div>
+        <Link
+          href={data?.link ?? "#"}
+          className="inline-flex items-center border-b border-b-[var(--primary)] text-xs font-semibold text-[#141D38] group-hover:!text-white lg:text-xl"
         >
-          <g clipPath="url(#clip0_190_311)">
-            <path d="M20.254 4.14444L1.15527 4.12828C1.05582 4.12828 0.960434 4.08675 0.890108 4.01282C0.819782 3.93889 0.780273 3.83861 0.780273 3.73406C0.780273 3.62951 0.819782 3.52924 0.890108 3.45531C0.960434 3.38138 1.05582 3.33984 1.15527 3.33984L20.2544 3.35601C20.3539 3.35601 20.4493 3.39754 20.5196 3.47147C20.5899 3.5454 20.6294 3.64567 20.6294 3.75022C20.6294 3.85478 20.5899 3.95505 20.5196 4.02898C20.4493 4.10291 20.3535 4.14444 20.254 4.14444Z" />
-            <path d="M24.7807 3.75493C22.6503 4.58279 20.0066 5.99882 18.3682 7.5L19.6604 3.7502L18.3731 0C20.0099 1.50315 22.6514 2.92234 24.7807 3.75493Z" />
-          </g>
-          <defs>
-            <clipPath id="clip0_190_311">
-              <rect
-                width="24"
-                height="8"
-                fill="white"
-                transform="translate(0.780273)"
-              />
-            </clipPath>
-          </defs>
-        </svg>
-      </Link>
+          Learn More
+          <svg
+            width="25"
+            height="8"
+            viewBox="0 0 25 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="mt-1 ml-1 fill-[#141D38] group-hover:fill-white"
+          >
+            <g clipPath="url(#clip0_190_311)">
+              <path d="M20.254 4.14444L1.15527 4.12828C1.05582 4.12828 0.960434 4.08675 0.890108 4.01282C0.819782 3.93889 0.780273 3.83861 0.780273 3.73406C0.780273 3.62951 0.819782 3.52924 0.890108 3.45531C0.960434 3.38138 1.05582 3.33984 1.15527 3.33984L20.2544 3.35601C20.3539 3.35601 20.4493 3.39754 20.5196 3.47147C20.5899 3.5454 20.6294 3.64567 20.6294 3.75022C20.6294 3.85478 20.5899 3.95505 20.5196 4.02898C20.4493 4.10291 20.3535 4.14444 20.254 4.14444Z" />
+              <path d="M24.7807 3.75493C22.6503 4.58279 20.0066 5.99882 18.3682 7.5L19.6604 3.7502L18.3731 0C20.0099 1.50315 22.6514 2.92234 24.7807 3.75493Z" />
+            </g>
+            <defs>
+              <clipPath id="clip0_190_311">
+                <rect
+                  width="24"
+                  height="8"
+                  fill="white"
+                  transform="translate(0.780273)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+        </Link>
+      </div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import React from "react";
 
 const Vision = () => {
   return (
-    <div className="relative flex items-center justify-center py-20 lg:py-28 2xl:py-32">
+    <div id="vision" className="relative flex items-center justify-center py-20 lg:py-28 2xl:py-32">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: 'url("./vision/bg.png")' }}
