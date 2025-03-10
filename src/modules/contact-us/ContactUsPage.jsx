@@ -14,7 +14,7 @@ const ContactUsPage = () => {
       <Process />
       <PartnerWithUs />
       <FAQs />
-      <Footer />
+      <Footer title="Ready to join hands with us" btnTxt="step into success" />
       <Copytight />
     </div>
   );

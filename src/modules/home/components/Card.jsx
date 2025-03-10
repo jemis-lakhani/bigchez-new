@@ -7,10 +7,17 @@ const Card = ({ data }) => {
         <div className="h-full overflow-hidden rounded-2xl">
           <img src={data?.image} className="h-full w-full object-cover" />
         </div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-full border-[2px] border-white bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] px-4 py-2 text-xs font-semibold text-white uppercase group-hover:!bg-[linear-gradient(0deg,#fff_0%,#fff_100%)] group-hover:text-[#f57c00]">
-          <div className="badge-angle absolute top-[55%] -right-[16px] h-4 w-4 -translate-y-1/2 transform bg-white group-hover:top-[53%] group-hover:-right-[14px] group-hover:bg-white" />
-          <div className="badge-angle absolute top-[55%] -left-[16px] h-4 w-4 -translate-y-1/2 rotate-180 transform bg-white group-hover:top-[53%] group-hover:-left-[14px] group-hover:bg-white" />
-          {data?.badgeTitle}
+
+        <div className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-1/2 rounded-full border-[2px] border-white bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] text-xs font-semibold text-white uppercase group-hover:!bg-[linear-gradient(0deg,#fff_0%,#fff_100%)] group-hover:text-[#f57c00]">
+          <div className="relative z-10 flex gap-10 px-4 py-2">
+            <div className="absolute top-[53%] -left-[0.75rem] -translate-y-1/2 transform">
+              <img src="./journals/left-corner.svg" />
+            </div>
+            <div className="relative z-20">{data?.badgeTitle}</div>
+            <div className="absolute top-[53%] -right-[0.75rem] -translate-y-1/2 transform">
+              <img src="./journals/right-corner.svg" />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -108,7 +115,7 @@ const Card = ({ data }) => {
       <div>
         <Link
           href={data?.link ?? "#"}
-          className="border-primary inline-flex items-center border-b text-sm font-semibold text-[#141D38] group-hover:!text-white"
+          className="relative inline-flex items-center text-sm font-semibold text-[#141D38] group-hover:!text-white"
         >
           Learn More
           <svg
@@ -134,6 +141,7 @@ const Card = ({ data }) => {
               </clipPath>
             </defs>
           </svg>
+          <span className="bg-primary absolute bottom-[-3px] left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full"></span>
         </Link>
       </div>
     </div>

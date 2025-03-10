@@ -22,7 +22,7 @@ const PartnerWithUs = () => {
   };
 
   return (
-    <div className="relative -mt-0.5">
+    <div className="relative -mt-0.5" id="partner-with-us">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{

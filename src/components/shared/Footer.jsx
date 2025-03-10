@@ -4,19 +4,19 @@ import React from "react";
 
 const itemClasses = "text-lg";
 
-const Footer = () => {
+const Footer = ({ title, btnTxt, btnLink }) => {
   return (
     <div className="bg-secondary relative py-10 lg:py-20">
       <div className="main-container flex flex-col gap-20">
         <div className="flex w-full flex-col items-center justify-center gap-10">
           <span className="text-center text-[32px] font-medium capitalize lg:text-[40px]">
-            Ready to join hands with us
+            {title}
           </span>
           <Button
             type="submit"
             className="!px-12 !py-3.5 text-base capitalize lg:!px-18 lg:!py-4 lg:!text-2xl"
           >
-            step into success
+            {btnTxt}
           </Button>
         </div>
 

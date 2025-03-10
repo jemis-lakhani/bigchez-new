@@ -8,7 +8,7 @@ const BlogPage = () => {
     <div className="flex flex-col">
       <Hero />
       <Blogs />
-      <Footer />
+      <Footer title="Ready to join hands with us" btnTxt="Let's Talk" />
       <Copytight />
     </div>
   );

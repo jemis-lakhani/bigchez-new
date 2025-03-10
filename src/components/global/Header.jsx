@@ -14,13 +14,13 @@ const Header = () => {
   const pathSegment = pathname.split("/").filter(Boolean).pop();
 
   return (
-    <div className="flex flex-row items-center justify-center lg:justify-between">
+    <div className="flex flex-row items-center justify-center md:justify-between">
       <div className="flex justify-center object-contain">
         <Link href="/">
-          <img src="/logo.png" className="w-[65%] lg:w-auto" />
+          <img src="/logo.png" className="w-[65%] 2xl:w-auto" />
         </Link>
       </div>
-      <div className="b-1 hidden items-center gap-7 rounded-[50px] px-9 py-4 lg:flex">
+      <div className="b-1 hidden items-center gap-3 rounded-[50px] px-3 py-3 md:flex lg:gap-7 2xl:px-9 2xl:py-4">
         <div
           className={cn(
             "flex h-full gap-3 text-sm font-bold uppercase",
@@ -52,8 +52,11 @@ const Header = () => {
           <img src="/login.png" className="object-contain" />
           <span>Login</span>
         </Button>
-        <div className="border-primary flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border">
-          <img src="/announcements.png" />
+        <div className="border-primary flex aspect-square w-12 items-center justify-center overflow-hidden rounded-full border p-2">
+          <img
+            src="/announcements.png"
+            className="h-full w-full object-contain"
+          />
         </div>
       </div>
     </div>

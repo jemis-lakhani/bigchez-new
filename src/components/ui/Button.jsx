@@ -10,7 +10,7 @@ const buttonVariants = cva(
         default:
           "bg-gradient-to-r from-[#FFA726] via-[#F57C00] to-[#F57C00] text-white rounded-full hover:opacity-90 ring-primary ring-[4px]",
         secondary:
-          "relative px-10 py-5 text-white font-semibold rounded-xl bg-gradient-to-r from-[#FFA726] via-[#F57C00] to-[#F57C00] border-[2px] before:content-[''] before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-[#0993AB] before:via-[#09748D] before:to-[#09748D] before:translate-x-2 before:translate-y-2.5 before:w-full before:h-full",
+          "before relative rounded-xl border-[2px] bg-gradient-to-r from-[#FFA726] via-[#F57C00] to-[#F57C00] px-10 py-5 font-semibold text-white transition-all duration-200 before:absolute before:inset-0 before:-z-10 before:h-full before:w-full before:translate-x-2 before:translate-y-2.5 before:rounded-xl before:bg-gradient-to-r before:from-[#0993AB] before:via-[#09748D] before:to-[#09748D] before:content-[''] hover:from-[#FFB74D] hover:via-[#FB8C00] hover:to-[#FB8C00] hover:shadow-[0px_1px_2px_rgba(0,0,0,0.16),0px_0px_0px_1px_#09748D]",
       },
     },
     defaultVariants: {

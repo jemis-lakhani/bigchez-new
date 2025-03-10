@@ -23,7 +23,7 @@ const Process = () => {
   ];
 
   return (
-    <div className="bg-secondary relative py-40">
+    <div className="bg-secondary relative py-40" id="process">
       <div className="main-container grid grid-cols-1 gap-30 lg:grid-cols-3 lg:gap-10">
         {data?.map((item, index) => (
           <div

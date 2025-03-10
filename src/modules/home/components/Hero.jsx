@@ -1,12 +1,25 @@
 "use client";
 import Header from "@/components/global/Header";
 import { Button } from "@/components/ui/Button";
-import Menu from "./Menu";
+import Menu from "../../../components/global/Menu";
 
 const Hero = () => {
+  const menuItems = [
+    {
+      title: "Transform Business",
+      link: "transform-business",
+    },
+    { title: "Impact Journals", link: "impact-journal" },
+    { title: "Promises", link: "promises" },
+    { title: "Vision", link: "vision" },
+    { title: "Affordable", link: "affordable" },
+    { title: "Careers", link: "carriers" },
+    { title: "FAQ", link: "faq" },
+  ];
+
   return (
     <div className="relative">
-      <Menu />
+      <Menu menuItems={menuItems} />
       <div
         className="absolute inset-0 object-cover"
         style={{ backgroundImage: 'url("./bg.png")' }}
@@ -18,7 +31,7 @@ const Hero = () => {
       <div className="main-container relative z-30 flex flex-col pt-4">
         <Header />
         <div className="relative mx-auto flex flex-col items-center gap-20 py-24 text-center 2xl:w-[75%]">
-          <div className="mx-2 text-[65px] leading-none capitalize lg:mx-0 lg:text-[140px]">
+          <div className="mx-2 text-[65px] leading-none capitalize lg:mx-0 lg:text-9xl">
             <span className="flex flex-wrap justify-center font-semibold">
               <span className="relative">
                 Your&nbsp;

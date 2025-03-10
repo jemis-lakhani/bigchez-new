@@ -1,14 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 
 const ChatWithUs = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const lastClosedTime = localStorage.getItem("chatClosedTime");
+    if (lastClosedTime) {
+      const elapsedTime = Date.now() - parseInt(lastClosedTime, 10);
+      if (elapsedTime < 24 * 60 * 60 * 1000) {
+        setIsOpen(false);
+        return;
+      }
+    }
+    setIsOpen(true);
+  }, []);
+
+  const handleClose = () => {
+    setIsOpen(false);
+    localStorage.setItem("chatClosedTime", Date.now().toString());
+  };
+
   return (
-    <div className="absolute right-4 -bottom-8 z-50 flex flex-col items-end lg:bottom-4">
+    <div className="fixed right-4 -bottom-8 z-50 flex flex-col items-end lg:bottom-4">
       {isOpen && (
         <div className="relative mb-4 max-w-xs rounded-lg bg-white px-3 py-4 shadow-lg">
           <div className="flex items-start gap-3">
@@ -23,7 +40,7 @@ const ChatWithUs = () => {
               </p>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={handleClose}
               className="text-gray-400 hover:text-gray-600"
               aria-label="Close"
             >

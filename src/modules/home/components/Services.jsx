@@ -11,7 +11,7 @@ const Services = () => {
         style={{ backgroundImage: 'url("./services/bg.png' }}
       ></div>
       <div className="main-container relative z-1 flex flex-col items-center gap-8">
-        <div className="text-center text-[42px] leading-[60px] lg:text-[48px]">
+        <div className="text-center text-5xl">
           <span className="font-bold">Can Quality Be </span>
           <span className="text-secondary-1 font-bold">&nbsp;Affordable?</span>
         </div>

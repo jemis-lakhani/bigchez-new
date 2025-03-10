@@ -34,8 +34,11 @@ const FAQs = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div id="faq" className="main-container flex flex-col items-center gap-8 py-20 lg:py-32">
-      <span className="text-center text-[30px] font-bold lg:text-[48px] lg:leading-[60px]">
+    <div
+      id="faq"
+      className="main-container flex flex-col items-center gap-8 py-20 lg:py-32"
+    >
+      <span className="text-center text-5xl font-bold">
         Frequently Asked Questions
       </span>
 
