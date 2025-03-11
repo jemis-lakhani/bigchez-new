@@ -25,7 +25,7 @@ const ChatWithUs = () => {
   };
 
   return (
-    <div className="fixed right-4 -bottom-8 z-50 flex flex-col items-end lg:bottom-4">
+    <div className="fixed right-4 bottom-4 z-50 flex flex-col items-end">
       {isOpen && (
         <div className="relative mb-4 max-w-xs rounded-lg bg-white px-3 py-4 shadow-lg">
           <div className="flex items-start gap-3">

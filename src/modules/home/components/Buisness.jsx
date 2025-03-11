@@ -47,7 +47,7 @@ const Buisness = () => {
       >
         <div className="main-container flex grid-cols-1 flex-col gap-7 md:grid md:grid-cols-2 md:gap-8 xl:grid-cols-3 2xl:gap-12">
           <div className="flex flex-col justify-center gap-5">
-            <div className="text-5xl 2xl:leading-[60px]">
+            <div className="text-5xl xl:text-4xl 2xl:text-5xl 2xl:leading-[60px]">
               <span className="font-bold">Transform Your</span>
               <br />
               <span className="text-secondary-1 font-extrabold">Business</span>

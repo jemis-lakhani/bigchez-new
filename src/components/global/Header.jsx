@@ -20,7 +20,7 @@ const Header = () => {
           <img src="/logo.png" className="w-[65%] 2xl:w-auto" />
         </Link>
       </div>
-      <div className="b-1 hidden items-center gap-3 rounded-[50px] px-3 py-3 md:flex lg:gap-7 2xl:px-9 2xl:py-4">
+      <div className="b-1 hidden items-center gap-3 rounded-[50px] px-4 py-2 md:flex lg:gap-4 xl:gap-6 xl:px-7 xl:py-2">
         <div
           className={cn(
             "flex h-full gap-3 text-sm font-bold uppercase",
@@ -48,7 +48,7 @@ const Header = () => {
             Blog
           </Link>
         </div>
-        <Button>
+        <Button className="!px-7 !py-3">
           <img src="/login.png" className="object-contain" />
           <span>Login</span>
         </Button>

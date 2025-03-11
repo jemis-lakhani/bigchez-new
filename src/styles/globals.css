@@ -48,7 +48,7 @@ body {
 }
 
 .main-container {
-  @apply mx-auto w-full max-w-[95%] md:max-w-[90%] xl:max-w-[75%];
+  @apply mx-auto w-full max-w-[95%] md:max-w-[90%] xl:max-w-[65%] 2xl:max-w-[75%];
 }
 
 /* borders */
@@ -117,6 +117,7 @@ body {
 }
 
 .chezzer-text {
+  font-family: sans-serif;
   font-size: 80px;
   font-weight: 700;
   color: transparent;
@@ -126,6 +127,7 @@ body {
 }
 
 .bigchez-text {
+  font-family: sans-serif;
   font-size: 40px;
   font-weight: 800;
   color: transparent;

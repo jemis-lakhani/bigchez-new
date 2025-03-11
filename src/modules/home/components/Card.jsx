@@ -2,26 +2,33 @@ import Link from "next/link";
 
 const Card = ({ data }) => {
   return (
-    <div className="group relative flex flex-col gap-5 rounded-3xl border-[1px] border-[#E7E5EA] p-6 pb-12 hover:!bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)]">
-      <div className="relative rounded-2xl group-hover:border-2 group-hover:border-white">
+    <div className="group relative z-10 flex flex-col gap-5 rounded-3xl border-[1px] border-[#E7E5EA] p-6 pb-12">
+      <div className="absolute inset-0 rounded-3xl bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></div>
+      <div className="relative rounded-2xl border-[2px] border-white">
         <div className="h-full overflow-hidden rounded-2xl">
           <img src={data?.image} className="h-full w-full object-cover" />
         </div>
 
-        <div className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-1/2 rounded-full border-[2px] border-white bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] text-xs font-semibold text-white uppercase group-hover:!bg-[linear-gradient(0deg,#fff_0%,#fff_100%)] group-hover:text-[#f57c00]">
-          <div className="relative z-10 flex gap-10 px-4 py-2">
-            <div className="absolute top-[53%] -left-[0.75rem] -translate-y-1/2 transform">
-              <img src="./journals/left-corner.svg" />
-            </div>
-            <div className="relative z-20">{data?.badgeTitle}</div>
-            <div className="absolute top-[53%] -right-[0.75rem] -translate-y-1/2 transform">
-              <img src="./journals/right-corner.svg" />
+        <div className="absolute -bottom-px left-1/2 z-10 -translate-x-1/2 translate-y-1/2 rounded-full bg-white p-px font-semibold">
+          <div className="relative">
+            <img
+              src="./journals/left-corner.svg"
+              className="absolute top-[49.5%] -left-2.5 z-0 h-auto w-auto -translate-y-1/2 transform"
+              alt="Left Corner"
+            />
+            <img
+              src="./journals/right-corner.svg"
+              className="absolute top-[49.5%] -right-2.5 z-0 h-auto w-auto -translate-y-1/2 transform"
+              alt="Right Corner"
+            />
+            <div className="relative z-10 rounded-full bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] px-4 py-2 text-xs text-white uppercase transition-all duration-300 ease-in-out group-hover:!bg-[linear-gradient(0deg,#fff_0%,#fff_100%)] group-hover:text-[#f57c00] xl:px-3 2xl:px-4">
+              {data?.badgeTitle}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-3 flex justify-start gap-4">
+      <div className="relative z-10 mt-3 flex justify-start gap-4">
         <div className="flex gap-2">
           <svg
             width="14"
@@ -108,11 +115,11 @@ const Card = ({ data }) => {
       </div>
 
       <div
-        className="text-2xl font-medium text-[#141D38] group-hover:!text-white"
+        className="relative z-10 text-2xl font-medium text-[#141D38] group-hover:!text-white"
         dangerouslySetInnerHTML={{ __html: data?.desc }}
       />
 
-      <div>
+      <div className="relative z-10">
         <Link
           href={data?.link ?? "#"}
           className="relative inline-flex items-center text-sm font-semibold text-[#141D38] group-hover:!text-white"
@@ -149,3 +156,17 @@ const Card = ({ data }) => {
 };
 
 export default Card;
+
+{
+  /* <div className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-1/2 rounded-full border-[2px] border-white bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] text-xs font-semibold text-white uppercase group-hover:bottom-[0.5%] group-hover:!border-0 group-hover:!bg-[linear-gradient(0deg,#fff_0%,#fff_100%)] group-hover:text-[#f57c00]">
+          <div className="relative z-10 flex gap-10 px-3 py-2 2xl:px-4">
+            <div className="absolute top-[53%] -left-[0.57rem] -translate-y-1/2 transform">
+              <img src="./journals/left-corner.svg" className="relative z-0" />
+            </div>
+            <div className="relative z-20">{data?.badgeTitle}</div>
+            <div className="absolute top-[53%] -right-[0.57rem] -translate-y-1/2 transform">
+              <img src="./journals/right-corner.svg" className="relative z-0" />
+            </div>
+          </div>
+        </div> */
+}
