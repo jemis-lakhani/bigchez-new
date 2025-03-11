@@ -9,8 +9,8 @@ const Card = ({ data }) => {
           <img src={data?.image} className="h-full w-full object-cover" />
         </div>
 
-        <div className="absolute -bottom-px left-1/2 z-10 -translate-x-1/2 translate-y-1/2 rounded-full bg-white p-px font-semibold">
-          <div className="relative">
+        <div className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-1/2 rounded-full bg-white p-px font-semibold">
+          {/* <div className="relative">
             <img
               src="./journals/left-corner.svg"
               className="absolute top-[49.5%] -left-2.5 z-0 h-auto w-auto -translate-y-1/2 transform"
@@ -21,9 +21,9 @@ const Card = ({ data }) => {
               className="absolute top-[49.5%] -right-2.5 z-0 h-auto w-auto -translate-y-1/2 transform"
               alt="Right Corner"
             />
-            <div className="relative z-10 rounded-full bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] px-4 py-2 text-xs text-white uppercase transition-all duration-300 ease-in-out group-hover:!bg-[linear-gradient(0deg,#fff_0%,#fff_100%)] group-hover:text-[#f57c00] xl:px-3 2xl:px-4">
-              {data?.badgeTitle}
-            </div>
+          </div> */}
+          <div className="relative z-10 rounded-full bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] px-4 py-2 text-xs text-white uppercase transition-all duration-300 ease-in-out group-hover:!bg-[linear-gradient(0deg,#fff_0%,#fff_100%)] group-hover:text-[#f57c00] xl:px-3 xl:text-[9px] 2xl:px-4 2xl:text-xs">
+            {data?.badgeTitle}
           </div>
         </div>
       </div>

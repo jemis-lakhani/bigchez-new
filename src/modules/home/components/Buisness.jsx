@@ -62,7 +62,7 @@ const Buisness = () => {
           {data?.map((item, index) => (
             <div
               key={index}
-              className="group border-secondary hover:!border-primary relative mx-2 overflow-hidden rounded-[30px] border bg-white py-9 lg:mx-0"
+              className="group border-secondary relative mx-2 overflow-hidden rounded-[30px] border bg-white hover:!border-[var(--primary)] lg:mx-0 lg:py-7 2xl:py-9"
             >
               <div
                 className="pointer-events-none absolute inset-0 rounded-[30px] bg-cover bg-center opacity-0 transition-opacity duration-500 group-hover:opacity-100"

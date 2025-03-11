@@ -52,11 +52,8 @@ const Hero = () => {
             </span>
           </div>
           <Button
-            variant="secondary"
+            variant="secondary-1"
             className="!px-12 !py-5 text-base uppercase lg:!px-18 lg:!py-6 lg:!text-2xl"
-            style={{
-              borderColor: "#09748D",
-            }}
           >
             step into success
           </Button>
