@@ -31,8 +31,11 @@ const Hero = () => {
       <div className="main-container relative z-30 flex flex-col pt-4">
         <Header />
         <div className="relative mx-auto flex flex-col items-center gap-20 py-24 text-center 2xl:w-[75%]">
-          <div className="mx-2 text-[65px] leading-none capitalize lg:mx-0 lg:text-9xl">
-            <span className="flex flex-wrap justify-center font-semibold">
+          <div className="mx-2 text-[65px] leading-none capitalize lg:mx-0 lg:text-[7.5rem]">
+            <span
+              className="flex flex-wrap justify-center font-extrabold text-[#16072F]"
+              style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
+            >
               <span className="relative">
                 Your&nbsp;
                 <span className="absolute -top-6 -left-10 lg:-top-4">
@@ -41,9 +44,20 @@ const Hero = () => {
               </span>
               needs
             </span>
-            <span className="flex flex-wrap justify-center font-bold uppercase">
+
+            <span
+              className="flex flex-wrap justify-center font-extrabold text-[#16072F] uppercase"
+              style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
+            >
               our&nbsp;
-              <span className="text-secondary-1 relative">
+              <span
+                className="relative text-[#6A1B9A]"
+                style={{
+                  textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                  // WebkitTextStroke: "1px black",
+                  // fontFamily: "system-ui",
+                }}
+              >
                 Design
                 <span className="absolute right-0 -bottom-2 -z-1">
                   <img src="/lines-2.png" />
@@ -51,10 +65,7 @@ const Hero = () => {
               </span>
             </span>
           </div>
-          <Button
-            variant="secondary-1"
-            className="!px-12 !py-5 text-base uppercase lg:!px-18 lg:!py-6 lg:!text-2xl"
-          >
+          <Button className="relative inline-block rounded-md bg-[var(--primary)] px-8 py-4 text-center text-2xl text-white uppercase no-underline transition-all duration-200 hover:bg-[#ff8c16] hover:shadow-[0px_1px_4px_rgba(0,0,0,0.16),0px_0px_0px_2px_#e97600]">
             step into success
           </Button>
         </div>

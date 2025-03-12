@@ -9,8 +9,8 @@ import {
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
 
-const titleClass = "text-[22px] font-medium";
-const itemClasses = "text-lg";
+const titleClass = "text-xl font-medium";
+const itemClasses = "text-base";
 
 const data = {
   apps: {

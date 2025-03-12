@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Card = ({ data }) => {
   return (
-    <div className="group relative z-10 flex flex-col gap-5 rounded-3xl border-[1px] border-[#E7E5EA] p-6 pb-12">
+    <div className="group relative z-10 flex flex-col gap-5 rounded-3xl border-[1px] border-[#E7E5EA] p-4 pb-12 lg:p-3 2xl:p-5">
       <div className="absolute inset-0 rounded-3xl bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></div>
       <div className="relative rounded-2xl border-[2px] border-white">
         <div className="h-full overflow-hidden rounded-2xl">

@@ -15,7 +15,7 @@ const Menu = ({ menuItems }) => {
   };
 
   return (
-    <div className="fixed top-1/2 right-0 left-auto z-40 flex flex-col">
+    <div className="fixed top-[40%] right-0 left-auto z-40 flex flex-col">
       <button
         className="blue-gradient-bg absolute top-0 right-full flex h-10 w-10 cursor-pointer items-center justify-center rounded-l-lg rounded-r-none text-white shadow-md focus:outline-none lg:h-15 lg:w-15"
         onClick={() => setIsOpen(!isOpen)}

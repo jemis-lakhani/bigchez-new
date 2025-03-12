@@ -29,21 +29,31 @@ const Header = () => {
         >
           <Link
             href="/"
-            className={cn(pathSegment === undefined && activeClass, "")}
+            className={cn(
+              "leading-none",
+              pathSegment === undefined && activeClass,
+              "",
+            )}
           >
             Home
           </Link>
           <div className="h-auto w-[1px] bg-black font-semibold"></div>
           <Link
             href="/contact-us"
-            className={cn(pathSegment === "contact-us" && activeClass)}
+            className={cn(
+              "leading-none",
+              pathSegment === "contact-us" && activeClass,
+            )}
           >
             Contact Us
           </Link>
           <div className="h-auto w-[1px] bg-black font-semibold"></div>
           <Link
             href="/blog"
-            className={cn(pathSegment === "blog" && activeClass)}
+            className={cn(
+              "leading-none",
+              pathSegment === "blog" && activeClass,
+            )}
           >
             Blog
           </Link>
