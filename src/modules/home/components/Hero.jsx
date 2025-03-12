@@ -51,11 +51,9 @@ const Hero = () => {
             >
               our&nbsp;
               <span
-                className="relative text-[#6A1B9A]"
+                className="text-purple-gradient relative"
                 style={{
                   textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                  // WebkitTextStroke: "1px black",
-                  // fontFamily: "system-ui",
                 }}
               >
                 Design

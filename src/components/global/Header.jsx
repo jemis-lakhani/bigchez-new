@@ -15,15 +15,15 @@ const Header = () => {
 
   return (
     <div className="flex flex-row items-center justify-center md:justify-between">
-      <div className="flex h-[95%] justify-center object-contain">
+      <div className="ustify-center flex object-contain">
         <Link href="/">
-          <img src="/logo.png" className="w-[65%] lg:w-[60%] 2xl:w-auto" />
+          <img src="/logo.png" className="w-[65%] 2xl:w-auto" />
         </Link>
       </div>
-      <div className="b-1 hidden items-center gap-3 rounded-[50px] px-4 py-2 md:flex lg:gap-4 xl:gap-6 xl:px-7 xl:py-2">
+      <div className="b-1 hidden items-center gap-3 rounded-[50px] px-4 py-2 md:flex lg:gap-4 xl:gap-6 xl:px-7 xl:py-1.5">
         <div
           className={cn(
-            "flex h-full gap-3 text-sm font-bold uppercase",
+            "flex h-full gap-3 text-sm font-bold uppercase shadow-[0px_0px_5px_0px_#00000014]",
             syne.className,
           )}
         >

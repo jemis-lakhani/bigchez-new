@@ -56,7 +56,7 @@ const Journals = () => {
           <img src="arrow-up-orange.svg" />
         </div>
       </div>
-      <div className="grid gap-4 md:grid-cols-2 lg:gap-3 xl:grid-cols-3 2xl:gap-5">
+      <div className="grid gap-4 md:grid-cols-2 lg:gap-5 xl:grid-cols-3 2xl:gap-5">
         {data?.map((item, index) => (
           <Card key={index} data={item} />
         ))}
