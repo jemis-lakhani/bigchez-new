@@ -28,7 +28,7 @@ const Card = ({ data }) => {
         </div>
       </div>
 
-      <div className="relative z-10 mt-3 flex justify-start gap-4">
+      <div className="relative z-10 mt-3 flex justify-start gap-4 pl-[2px]">
         <div className="flex gap-2">
           <svg
             width="14"
@@ -115,11 +115,11 @@ const Card = ({ data }) => {
       </div>
 
       <div
-        className="relative z-10 text-2xl font-medium text-[#141D38] group-hover:!text-white"
+        className="relative z-10 pl-[2px] text-2xl font-medium text-[#141D38] group-hover:!text-white"
         dangerouslySetInnerHTML={{ __html: data?.desc }}
       />
 
-      <div className="relative z-10">
+      <div className="relative z-10 pl-[2px]">
         <Link
           href={data?.link ?? "#"}
           className="relative inline-flex items-center text-sm font-semibold text-[#141D38] group-hover:!text-white"
