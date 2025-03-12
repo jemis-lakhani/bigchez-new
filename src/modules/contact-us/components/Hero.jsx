@@ -27,7 +27,7 @@ const Hero = () => {
       ></div>
       <div className="main-container relative z-30 flex flex-col pt-4">
         <Header />
-        <div className="relative mx-auto flex w-full flex-col items-center gap-8 py-14 text-center lg:py-30 xl:w-[75%]">
+        <div className="relative mx-auto flex w-full flex-col items-center gap-8 py-14 text-center lg:py-30">
           <div
             className={cn(
               "text-[28px] leading-none font-semibold capitalize lg:text-[50px]",

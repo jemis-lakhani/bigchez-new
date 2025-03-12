@@ -35,13 +35,12 @@ const Vision = () => {
           <div className="mt-2 flex justify-center">
             <HRLine />
           </div>
-          <span className="text-center text-lg font-normal italic lg:text-3xl">
-            At <span className="font-bold">Bigchez</span>, we turn your ideas
+          <span className="text-center text-lg font-light italic lg:text-3xl">
+            At <span className="font-medium">Bigchez</span>, we turn your ideas
             into impact—
             <br />
             where innovation, quality, and dedication come
-            <br /> together to bring your&nbsp;
-            <span className="font-semibold">vision to life.</span>
+            <br /> together to bring your&nbsp; vision to life.
           </span>
           <Button className={cn("btn-h-86")}>Learn More</Button>
         </div>

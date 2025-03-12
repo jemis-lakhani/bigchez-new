@@ -48,7 +48,7 @@ body {
 }
 
 .main-container {
-  @apply mx-auto w-full max-w-[95%] md:max-w-[90%] xl:max-w-[65%] 2xl:max-w-[75%];
+  @apply mx-auto w-full max-w-[95%] md:max-w-[90%] xl:max-w-[67%] 2xl:max-w-[75%];
 }
 
 /* borders */

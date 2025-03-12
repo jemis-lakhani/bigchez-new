@@ -25,12 +25,12 @@ const ConnectWithUs = () => {
     return (
       <div
         className={cn(
-          "relative flex aspect-square w-20 items-center justify-center gap-5 rounded-full p-4 backdrop-blur-[32px] lg:aspect-auto lg:w-full lg:px-6 lg:py-4",
+          "relative flex aspect-square w-20 items-center justify-center gap-2.5 rounded-full p-4 backdrop-blur-[32px] lg:aspect-auto lg:w-full lg:p-4",
           index === 0 ? "bg-primary" : "bg-white/10",
         )}
       >
         <img src={data?.icon} />
-        <span className="hidden text-xl font-semibold text-white capitalize lg:block">
+        <span className="hidden text-lg font-semibold text-white capitalize lg:block">
           {data?.title}
         </span>
       </div>
@@ -52,7 +52,7 @@ const ConnectWithUs = () => {
         ></div>
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="main-container relative z-20">
-          <div className="flex justify-around gap-10 pt-20 pb-72 lg:grid lg:grid-cols-3">
+          <div className="flex justify-around gap-6 pt-20 pb-72 lg:grid lg:grid-cols-3">
             {data?.map((item, index) => (
               <Card key={index} index={index} data={item} />
             ))}
