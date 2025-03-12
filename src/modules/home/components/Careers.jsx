@@ -12,10 +12,9 @@ const Careers = () => {
       className="relative flex items-center justify-center py-32"
     >
       <div
-        className="absolute inset-0 bg-center bg-no-repeat"
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat 2xl:bg-cover"
         style={{
           backgroundImage: 'url("./careers/bg.png")',
-          backgroundSize: "contain",
         }}
       ></div>
 
