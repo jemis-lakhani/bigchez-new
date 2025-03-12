@@ -13,12 +13,16 @@ const Careers = () => {
     >
       <div
         className="absolute inset-0 bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("./careers/bg.png")' }}
+        style={{
+          backgroundImage: 'url("./careers/bg.png")',
+          backgroundSize: "contain",
+        }}
       ></div>
-      <div className="relative z-10 mx-2 flex h-full w-full flex-col items-center justify-center gap-8 rounded-4xl border border-white bg-[#182844] py-8 lg:w-[930px] lg:rounded-[50px] lg:py-30">
+
+      <div className="relative z-10 mx-2 flex h-full w-2/3 flex-col items-center justify-center gap-8 rounded-4xl border border-white bg-[#182844] py-4 lg:rounded-[50px] lg:py-12 xl:w-1/2 xl:py-20">
         <div
           className={cn(
-            "relative z-2 flex flex-wrap items-center justify-center gap-2 text-[46px] text-white lg:text-[80px] lg:leading-[60px]",
+            "relative z-2 flex flex-wrap items-center justify-center gap-2 text-5xl text-white lg:text-6xl xl:text-7xl",
             outfit.className,
           )}
         >
@@ -26,7 +30,7 @@ const Careers = () => {
           <span className="chezzer-text">Chezzer!</span>
         </div>
         <HRLine1 />
-        <div className="flex items-center text-2xl leading-[40px] text-white lg:text-[40px]">
+        <div className="flex items-center text-3xl text-white lg:text-4xl xl:text-5xl">
           Join the&nbsp;
           <span className="bigchez-text">BigChez</span>
           &nbsp;Team

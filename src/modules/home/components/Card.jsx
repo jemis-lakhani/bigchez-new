@@ -156,17 +156,3 @@ const Card = ({ data }) => {
 };
 
 export default Card;
-
-{
-  /* <div className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-1/2 rounded-full border-[2px] border-white bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] text-xs font-semibold text-white uppercase group-hover:bottom-[0.5%] group-hover:!border-0 group-hover:!bg-[linear-gradient(0deg,#fff_0%,#fff_100%)] group-hover:text-[#f57c00]">
-          <div className="relative z-10 flex gap-10 px-3 py-2 2xl:px-4">
-            <div className="absolute top-[53%] -left-[0.57rem] -translate-y-1/2 transform">
-              <img src="./journals/left-corner.svg" className="relative z-0" />
-            </div>
-            <div className="relative z-20">{data?.badgeTitle}</div>
-            <div className="absolute top-[53%] -right-[0.57rem] -translate-y-1/2 transform">
-              <img src="./journals/right-corner.svg" className="relative z-0" />
-            </div>
-          </div>
-        </div> */
-}

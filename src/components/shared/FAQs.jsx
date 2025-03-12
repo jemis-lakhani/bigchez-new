@@ -44,7 +44,7 @@ const FAQs = () => {
 
       <HRLine />
 
-      <div className="mx-auto flex w-full flex-col xl:max-w-[70%] 2xl:max-w-[75%]">
+      <div className="mx-auto flex w-full flex-col xl:max-w-[75%]">
         {items.map((item, index) => (
           <div
             key={index}
@@ -61,7 +61,7 @@ const FAQs = () => {
             >
               <span
                 className={cn(
-                  "text-left text-[15px] lg:text-[22px]",
+                  "text-left text-sm lg:text-xl",
                   openIndex === index
                     ? "font-bold text-white"
                     : "text-secondary",

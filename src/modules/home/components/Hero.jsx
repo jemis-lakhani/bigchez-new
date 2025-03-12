@@ -1,6 +1,5 @@
 "use client";
 import Header from "@/components/global/Header";
-import { Button } from "@/components/ui/Button";
 import Menu from "../../../components/global/Menu";
 
 const Hero = () => {
@@ -63,9 +62,12 @@ const Hero = () => {
               </span>
             </span>
           </div>
-          <Button className="relative inline-block rounded-md bg-[var(--primary)] px-8 py-4 text-center text-2xl text-white uppercase no-underline transition-all duration-200 hover:bg-[#ff8c16] hover:shadow-[0px_1px_4px_rgba(0,0,0,0.16),0px_0px_0px_2px_#e97600]">
+          <button
+            // className="relative inline-block cursor-pointer rounded-md bg-[var(--primary)] px-8 py-4 text-center text-2xl font-bold text-white uppercase no-underline transition-all duration-200 hover:bg-[#ff8c16] hover:shadow-[0px_1px_4px_rgba(0,0,0,0.16),0px_0px_0px_2px_#e97600]">
+            className="relative inline-block cursor-pointer rounded-md bg-[#2cbc63] px-8 py-4 text-center text-2xl font-bold text-white uppercase no-underline transition-all duration-200 hover:bg-[#30d46f] hover:shadow-[0px_1px_4px_rgba(0,0,0,0.16),0px_0px_0px_2px_#1a9047]"
+          >
             step into success
-          </Button>
+          </button>
         </div>
       </div>
     </div>
