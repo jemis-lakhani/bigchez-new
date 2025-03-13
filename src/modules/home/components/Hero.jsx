@@ -65,22 +65,10 @@ const Hero = () => {
           </div>
           <Button
             variant="secondary"
-            className="relative box-border flex h-20 max-w-full cursor-pointer touch-manipulation items-center justify-center rounded-[1.25rem] border-2 border-[#09748D] bg-gradient-to-r from-[#FFA726] via-[#F57C00] to-[#F57C00] px-10 text-center text-2xl font-semibold text-white uppercase no-underline select-none after:absolute after:top-[-2px] after:left-0 after:-z-1 after:block after:h-20 after:w-full after:translate-x-2 after:translate-y-2 after:transform after:rounded-[1.25rem] after:bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:after:translate-x-0 hover:after:translate-y-0"
+            className="bg-primary-gradient relative box-border flex h-20 max-w-full cursor-pointer touch-manipulation items-center justify-center rounded-[1.25rem] border-2 border-[#09748D] px-10 text-center text-2xl font-semibold text-white uppercase no-underline select-none after:absolute after:top-[-2px] after:left-0 after:-z-1 after:block after:h-20 after:w-full after:translate-x-2 after:translate-y-2 after:transform after:rounded-[1.25rem] after:bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:after:translate-x-0 hover:after:translate-y-0"
           >
             step into success
           </Button>
-          {/* <Button
-            variant="secondary"
-            className="border-primary relative box-border flex h-20 max-w-full cursor-pointer touch-manipulation items-center justify-center rounded-[1.25rem] border-2 bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] px-10 text-center text-2xl font-semibold text-white uppercase no-underline select-none after:absolute after:top-[-2px] after:left-0 after:-z-1 after:block after:h-20 after:w-full after:translate-x-2 after:translate-y-2 after:transform after:rounded-[1.25rem] after:bg-gradient-to-r after:from-[#FFA726] after:via-[#F57C00] after:to-[#F57C00] after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:after:translate-x-0 hover:after:translate-y-0"
-          >
-            step into success
-          </Button>
-          <Button
-            variant="secondary"
-            className="text-primary relative box-border flex h-20 max-w-full cursor-pointer touch-manipulation items-center justify-center rounded-[1.25rem] border-2 border-black bg-white px-10 text-center text-2xl font-semibold uppercase no-underline select-none after:absolute after:top-[-2px] after:left-0 after:-z-1 after:block after:h-20 after:w-full after:translate-x-2 after:translate-y-2 after:transform after:rounded-[1.25rem] after:bg-black after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:after:translate-x-0 hover:after:translate-y-0"
-          >
-            step into success
-          </Button> */}
         </div>
       </div>
     </div>

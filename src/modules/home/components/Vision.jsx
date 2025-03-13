@@ -23,7 +23,7 @@ const Vision = () => {
             Empowering
             <span className="relative px-1 font-bold text-white">
               <span
-                className="blue-gradient-bg absolute inset-0 -z-10 rounded-lg"
+                className="bg-blue-gradient absolute inset-0 -z-10 rounded-lg"
                 style={{
                   transform: "rotate(-0.5deg)",
                 }}

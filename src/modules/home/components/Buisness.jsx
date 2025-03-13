@@ -77,6 +77,16 @@ const Buisness = () => {
     },
   ];
 
+  const handleToggle = () => {
+    setShowMore(!showMore);
+
+    if (showMore) {
+      document.getElementById("transform-business")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="relative">
       <div
@@ -101,7 +111,7 @@ const Buisness = () => {
             <BuisnessCard key={index} data={item} />
           ))}
         </div>
-        <Button className="btn-h-86" onClick={() => setShowMore(!showMore)}>
+        <Button className="btn-h-86" onClick={handleToggle}>
           {showMore ? "Show Less" : "Show More"}
           <IoArrowDownCircleOutline
             size={32}

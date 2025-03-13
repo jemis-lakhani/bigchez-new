@@ -34,7 +34,7 @@ const Hero = () => {
             Our
             <span className="relative ml-1 rounded-[10px] px-2 font-bold text-white">
               <span
-                className="blue-gradient-bg absolute inset-0 -z-10 rounded-[10px]"
+                className="bg-blue-gradient absolute inset-0 -z-10 rounded-[10px]"
                 style={{
                   transform: "rotate(-0.5deg)",
                 }}
