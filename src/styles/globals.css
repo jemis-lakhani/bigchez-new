@@ -72,17 +72,6 @@ body {
   --tw-ring-color: rgba(165, 105, 46, 0.1);
 }
 
-.primary-gradient-border {
-  border: 1px solid;
-  border-radius: 50px;
-  border-image-source: linear-gradient(
-    96.26deg,
-    rgba(255, 167, 38, 0.2) 0%,
-    rgba(245, 124, 0, 0.2) 50%
-  );
-  border-image-slice: 1;
-}
-
 /* text */
 .text-primary {
   color: var(--primary);

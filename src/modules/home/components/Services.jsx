@@ -7,8 +7,8 @@ const Services = () => {
     <div className="bg-secondary relative py-16 lg:py-32">
       <div
         id="affordable"
-        className="absolute inset-0 bg-cover bg-center opacity-5"
-        style={{ backgroundImage: 'url("./services/bg.png' }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{ backgroundImage: 'url("./services/bg.png")' }}
       ></div>
       <div className="main-container relative z-1 flex flex-col items-center gap-8">
         <div className="text-center text-5xl">

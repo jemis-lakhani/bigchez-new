@@ -1,6 +1,7 @@
 "use client";
 import Header from "@/components/global/Header";
 import Menu from "../../../components/global/Menu";
+import { Button } from "@/components/ui/Button";
 
 const Hero = () => {
   const menuItems = [
@@ -62,12 +63,12 @@ const Hero = () => {
               </span>
             </span>
           </div>
-          <button
-            // className="relative inline-block cursor-pointer rounded-md bg-[var(--primary)] px-8 py-4 text-center text-2xl font-bold text-white uppercase no-underline transition-all duration-200 hover:bg-[#ff8c16] hover:shadow-[0px_1px_4px_rgba(0,0,0,0.16),0px_0px_0px_2px_#e97600]">
-            className="relative inline-block cursor-pointer rounded-md bg-[#2cbc63] px-8 py-4 text-center text-2xl font-bold text-white uppercase no-underline transition-all duration-200 hover:bg-[#30d46f] hover:shadow-[0px_1px_4px_rgba(0,0,0,0.16),0px_0px_0px_2px_#1a9047]"
+          <Button
+            variant="secondary"
+            className="relative box-border flex h-20 max-w-full cursor-pointer touch-manipulation items-center justify-center rounded-[1.25rem] border-2 border-[#09748D] bg-gradient-to-r from-[#FFA726] via-[#F57C00] to-[#F57C00] px-10 text-center text-2xl font-semibold text-white uppercase no-underline select-none after:absolute after:top-[-2px] after:left-0 after:-z-1 after:block after:h-20 after:w-full after:translate-x-2 after:translate-y-2 after:transform after:rounded-[1.25rem] after:bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:after:translate-x-0 hover:after:translate-y-0"
           >
             step into success
-          </button>
+          </Button>
         </div>
       </div>
     </div>
