@@ -1,5 +1,5 @@
 import HRLine from "@/components/ui/HRLine";
-import Card from "./Card";
+import JournalCard from "./JournalCard";
 
 const Journals = () => {
   const data = [
@@ -58,7 +58,7 @@ const Journals = () => {
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:gap-5 xl:grid-cols-3 2xl:gap-5">
         {data?.map((item, index) => (
-          <Card key={index} data={item} />
+          <JournalCard key={index} data={item} />
         ))}
       </div>
     </div>
