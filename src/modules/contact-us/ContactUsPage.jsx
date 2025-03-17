@@ -5,6 +5,7 @@ import ConnectWithUs from "./components/ConnectWithUs";
 import Hero from "./components/Hero";
 import PartnerWithUs from "./components/PartnerWithUs";
 import Process from "./components/Process";
+import GlobalPresence from "./components/GlobalPresence";
 
 const ContactUsPage = () => {
   return (
@@ -13,6 +14,7 @@ const ContactUsPage = () => {
       <ConnectWithUs />
       <Process />
       <PartnerWithUs />
+      <GlobalPresence />
       <FAQs />
       <Footer title="Ready to join hands with us" btnTxt="step into success" />
       <Copytight />

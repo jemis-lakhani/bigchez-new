@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 const outfit = Outfit({ subsets: ["latin"], display: "swap" });
 
 const inputClasses =
-  "b-2 text-[#BDB9B9] w-full rounded-lg bg-white p-3 text-sm font-extralight focus:!border-2 focus:!border-black focus:outline-none lg:rounded-2xl lg:p-4 lg:text-[30px]";
+  "b-2 text-[#BDB9B9] w-full rounded-lg bg-white p-3 text-sm font-extralight focus:!border-2 focus:!border-black focus:outline-none lg:rounded-2xl lg:p-4 lg:text-2xl";
 
 const ConnectWithUs = () => {
   const {
@@ -65,7 +65,7 @@ const ConnectWithUs = () => {
         <span className="text-center text-[50px] font-bold text-white capitalize">
           Connect with us
         </span>
-        <div className="relative mx-auto w-[90%] lg:w-[65%] 2xl:w-[42%]">
+        <div className="relative mx-auto w-[90%] lg:w-[45%] 2xl:w-[35%]">
           <div className="absolute right-0 bottom-0 -z-10 aspect-square w-1/3 translate-x-1/8 translate-y-1/4 rounded-full bg-[#FFA64C] lg:-right-7 lg:-bottom-7 lg:w-1/2 lg:translate-x-1/6 lg:translate-y-1/8"></div>
           <form
             onSubmit={handleSubmit(onSubmit)}

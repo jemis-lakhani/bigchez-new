@@ -25,7 +25,7 @@ const Vision = () => {
               <span
                 className="bg-blue-gradient absolute inset-0 -z-10 rounded-lg"
                 style={{
-                  transform: "rotate(-0.5deg)",
+                  transform: "rotate(-1.125deg)",
                 }}
               ></span>
               Your Vision

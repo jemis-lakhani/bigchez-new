@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 const outfit = Outfit({ subsets: ["latin"], display: "swap" });
 
 const inputClasses =
-  "w-full rounded-xl lg:rounded-2xl b-2 p-3 lg:p-4 text-lg lg:text-[30px] font-light text-[#BDB9B9] z-10 bg-[#182844] focus:!border-2 focus:!border-white focus:outline-none";
+  "b-2 z-10 w-full rounded-xl bg-[#182844] p-3 text-lg font-light text-[#BDB9B9] focus:!border-2 focus:!border-white focus:outline-none lg:rounded-2xl lg:p-4 lg:text-2xl";
 
 const PartnerWithUs = () => {
   const {
