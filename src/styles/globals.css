@@ -39,6 +39,22 @@ body {
   }
 }
 
+.journal-grid {
+  display: grid; 
+}
+.journal-slider {
+  display: none; 
+}
+
+@media (max-width: 973px) {
+  .journal-grid {
+    display: none; 
+  }
+  .journal-slider {
+    display: block; 
+  }
+}
+
 .main-container {
   @apply mx-auto w-full max-w-[95%] md:max-w-[90%] xl:max-w-[67%] 2xl:max-w-[75%];
 }

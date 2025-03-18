@@ -1,7 +1,14 @@
+"use client";
 import HRLine from "@/components/ui/HRLine";
 import JournalCard from "./JournalCard";
+import Slider from "react-slick";
+import { useRef, useState } from "react";
+import clsx from "clsx";
 
 const Journals = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sliderRef = useRef(null);
+
   const data = [
     {
       image: "./journals/one.jpeg",
@@ -28,6 +35,78 @@ const Journals = () => {
       link: "#",
     },
   ];
+
+  var settings = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    infinite: true,
+    centerMode: true,
+    centerPadding: "60px",
+    autoplay: true,
+    autoplaySpeed: 3200,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 973,
+        settings: { centerPadding: "220px" },
+      },
+      {
+        breakpoint: 853,
+        settings: { centerPadding: "180px" },
+      },
+      {
+        breakpoint: 849,
+        settings: {
+          centerPadding: "150px",
+        },
+      },
+      {
+        breakpoint: 687,
+        settings: {
+          centerPadding: "140px",
+        },
+      },
+      {
+        breakpoint: 666,
+        settings: {
+          centerPadding: "130px",
+        },
+      },
+      {
+        breakpoint: 645,
+        settings: {
+          centerPadding: "120px",
+        },
+      },
+      {
+        breakpoint: 534,
+        settings: {
+          centerPadding: "50px",
+        },
+      },
+      {
+        breakpoint: 386,
+        settings: {
+          centerPadding: "30px",
+        },
+      },
+      {
+        breakpoint: 344,
+        settings: {
+          centerPadding: "5px",
+        },
+      },
+    ],
+    afterChange: (current) => setActiveIndex(current),
+  };
+
+  const handleDotClick = (index) => {
+    setActiveIndex(index);
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(index);
+    }
+  };
 
   return (
     <div
@@ -56,10 +135,44 @@ const Journals = () => {
           <img src="arrow-up-orange.svg" />
         </div>
       </div>
-      <div className="grid gap-4 md:grid-cols-2 lg:gap-5 xl:grid-cols-3 2xl:gap-5">
+      <div className="journal-grid gap-4 md:grid md:grid-cols-3 lg:grid-cols-3 lg:gap-5 2xl:gap-5">
         {data?.map((item, index) => (
           <JournalCard key={index} data={item} />
         ))}
+      </div>
+      <div className="journal-slider h-full overflow-hidden">
+        <Slider ref={sliderRef} {...settings}>
+          {data?.map((item, index) => (
+            <div
+              key={index}
+              className="flex px-4 py-5 transition-transform duration-300 ease-in-out md:px-5"
+            >
+              <JournalCard
+                key={index}
+                isSlider={true}
+                activeIndex={activeIndex}
+                index={index}
+                data={item}
+              />
+            </div>
+          ))}
+        </Slider>
+        <div className="flex justify-center">
+          <div className="rounded-full bg-gray-300 p-2">
+            {data.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleDotClick(index)}
+                className={clsx(
+                  "mx-1 h-3 w-3 rounded-xl border border-[#CBD5E0]",
+                  index === activeIndex
+                    ? "h-3 w-3 bg-[var(--primary)]"
+                    : "h-3 w-3 bg-[#000000]",
+                )}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
