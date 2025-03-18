@@ -158,7 +158,7 @@ const Journals = () => {
           ))}
         </Slider>
         <div className="flex justify-center">
-          <div className="rounded-full bg-gray-300 p-2">
+          <div className="flex items-center justify-center rounded-full bg-gray-300 px-3 py-4">
             {data.map((_, index) => (
               <button
                 key={index}
@@ -167,7 +167,7 @@ const Journals = () => {
                   "mx-1 h-3 w-3 rounded-xl border border-[#CBD5E0]",
                   index === activeIndex
                     ? "h-3 w-3 bg-[var(--primary)]"
-                    : "h-3 w-3 bg-[#000000]",
+                    : "h-3 w-3 bg-[#000000] opacity-30",
                 )}
               />
             ))}

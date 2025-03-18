@@ -109,6 +109,9 @@ const GlobalPresence = () => {
     variableWidth: true,
   };
 
+  const innerSliderRef = useRef(null);
+  const [innerActiveIndex, setInnerActiveIndex] = useState(0);
+
   return (
     <div className="main-container grid grid-cols-2 gap-5 py-32">
       <div className="flex gap-4">
@@ -142,9 +145,6 @@ const GlobalPresence = () => {
         </div>
         <Slider ref={sliderRef} {...settings}>
           {[1, 2, 3, 4, 5, 6].map((index) => {
-            const innerSliderRef = useRef(null);
-            const [innerActiveIndex, setInnerActiveIndex] = useState(0);
-
             return (
               <div
                 key={index}
