@@ -1,0 +1,22 @@
+<svg width="50" height="2153" viewBox="0 0 50 2153" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_3_3298" fill="white">
+<path d="M50 22C50 16.4771 45.5228 12 40 12H13V2143H40C45.5228 2143 50 2138.52 50 2133V22Z"/>
+</mask>
+<path d="M53 22C53 14.8203 47.1797 9 40 9H13V15H40C43.866 15 47 18.134 47 22H53ZM13 2146H40C47.1797 2146 53 2140.18 53 2133H47C47 2136.87 43.866 2140 40 2140H13V2146ZM40 2146C47.1797 2146 53 2140.18 53 2133V22C53 14.8203 47.1797 9 40 9V15C43.866 15 47 18.134 47 22V2133C47 2136.87 43.866 2140 40 2140V2146ZM13 12V2143V12Z" fill="#0F0A26" mask="url(#path-1-inside-1_3_3298)"/>
+<circle cx="13" cy="13" r="12.5667" transform="matrix(-1 0 0 1 26 0)" fill="white" stroke="#F57C00" stroke-width="0.866667"/>
+<circle cx="11.2667" cy="11.2667" r="10.8333" transform="matrix(-1 0 0 1 24.2676 1.7334)" fill="#F57C00" stroke="#F57C00" stroke-width="0.866667"/>
+<circle cx="13" cy="13" r="12.5667" transform="matrix(-1 0 0 1 26 451)" fill="white" stroke="#F57C00" stroke-width="0.866667"/>
+<circle cx="11.2667" cy="11.2667" r="10.8333" transform="matrix(-1 0 0 1 24.2676 452.733)" fill="#F57C00" stroke="#F57C00" stroke-width="0.866667"/>
+<rect x="-0.5" y="0.5" width="21" height="2" transform="matrix(-1 0 0 1 46 463)" fill="#0F0A26" stroke="#0F0A26"/>
+<circle cx="13" cy="13" r="12.5667" transform="matrix(-1 0 0 1 26 871)" fill="white" stroke="#F57C00" stroke-width="0.866667"/>
+<circle cx="11.2667" cy="11.2667" r="10.8333" transform="matrix(-1 0 0 1 24.2676 872.733)" fill="#F57C00" stroke="#F57C00" stroke-width="0.866667"/>
+<rect x="-0.5" y="0.5" width="21" height="2" transform="matrix(-1 0 0 1 46 883)" fill="#0F0A26" stroke="#0F0A26"/>
+<circle cx="13" cy="13" r="12.5667" transform="matrix(-1 0 0 1 26 1275)" fill="white" stroke="#F57C00" stroke-width="0.866667"/>
+<circle cx="11.2667" cy="11.2667" r="10.8333" transform="matrix(-1 0 0 1 24.2676 1276.73)" fill="#F57C00" stroke="#F57C00" stroke-width="0.866667"/>
+<rect x="-0.5" y="0.5" width="21" height="2" transform="matrix(-1 0 0 1 46 1287)" fill="#0F0A26" stroke="#0F0A26"/>
+<circle cx="13" cy="13" r="12.5667" transform="matrix(-1 0 0 1 26 1703)" fill="white" stroke="#F57C00" stroke-width="0.866667"/>
+<circle cx="11.2667" cy="11.2667" r="10.8333" transform="matrix(-1 0 0 1 24.2676 1704.73)" fill="#F57C00" stroke="#F57C00" stroke-width="0.866667"/>
+<rect x="-0.5" y="0.5" width="21" height="2" transform="matrix(-1 0 0 1 46 1715)" fill="#0F0A26" stroke="#0F0A26"/>
+<circle cx="13" cy="13" r="12.5667" transform="matrix(-1 0 0 1 26 2127)" fill="white" stroke="#F57C00" stroke-width="0.866667"/>
+<circle cx="11.2667" cy="11.2667" r="10.8333" transform="matrix(-1 0 0 1 24.2676 2128.73)" fill="#F57C00" stroke="#F57C00" stroke-width="0.866667"/>
+</svg>

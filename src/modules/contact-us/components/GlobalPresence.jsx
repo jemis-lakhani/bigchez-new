@@ -1,252 +1,1116 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   BsArrowDownShort,
   BsArrowLeftShort,
   BsArrowRightShort,
   BsArrowUpShort,
 } from "react-icons/bs";
+import CitySlider from "./CitySlider";
+import { Syne } from "next/font/google";
+import HRLine1 from "@/components/ui/HRLine1";
 import Slider from "react-slick";
+import CountryCard from "./CountryCard";
 
-const locations = [
-  "CHENNAI",
-  "DELHI (NCR)",
-  "KOLKATA",
-  "KOLKATA",
-  "KOLKATA",
-  "KOLKATA",
-];
+const regions = ["ASIA-PACIFIC", "EUROPE", "AFRICA", "NORTH AMERICA"];
 
 const data = [
+  // --- ASIA-PACIFIC (6) ---
   {
     country: "India",
+    continent: "ASIA-PACIFIC",
     flag: "./contact-us/presence/india.png",
-    address:
-      "Estancia IT Park, Plot no. 140, 151,GST Road, Vallancheri,Chengalpattu District - 603 202, India",
-    cities: [
-      "CHENNAI",
-      "DELHI (NCR)",
-      "KOLKATA",
-      "KOLKATA",
-      "KOLKATA",
-      "KOLKATA",
+    locations: [
+      {
+        city: "Chennai",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu - 603 202, Chennai, India
+          </span>
+        ),
+        contactNo: "+91 44-12345678",
+      },
+      {
+        city: "Delhi (NCR)",
+        address: (
+          <span className="text-lg font-normal">
+            DLF Cyber City, Phase II,
+            <br />
+            Gurgaon, Haryana - 122002,
+            <br />
+            Delhi (NCR), India
+          </span>
+        ),
+        contactNo: "+91 11-98765432",
+      },
+      {
+        city: "Mumbai",
+        address: (
+          <span className="text-lg font-normal">
+            Bandra Kurla Complex,
+            <br />
+            Bandra East, Mumbai,
+            <br />
+            Maharashtra - 400051, India
+          </span>
+        ),
+        contactNo: "+91 22-87654321",
+      },
+      {
+        city: "Kolkata",
+        address: (
+          <span className="text-lg font-normal">
+            Salt Lake City, Sector V,
+            <br />
+            Kolkata, West Bengal - 700091,
+            <br />
+            India
+          </span>
+        ),
+        contactNo: "+91 33-67890123",
+      },
+      {
+        city: "Bangalore",
+        address: (
+          <span className="text-lg font-normal">
+            Electronic City, Phase I,
+            <br />
+            Bangalore, Karnataka - 560100,
+            <br />
+            India
+          </span>
+        ),
+        contactNo: "+91 80-76543210",
+      },
+      {
+        city: "Hyderabad",
+        address: (
+          <span className="text-lg font-normal">
+            HITEC City, Madhapur,
+            <br />
+            Hyderabad, Telangana - 500081,
+            <br />
+            India
+          </span>
+        ),
+        contactNo: "+91 40-12345678",
+      },
     ],
-    contactNo: "000-0000000",
   },
   {
     country: "China",
+    continent: "ASIA-PACIFIC",
     flag: "./contact-us/presence/china.png",
-    address:
-      "Estancia IT Park, Plot no. 140, 151,GST Road, Vallancheri,Chengalpattu District - 603 202, India",
-    cities: ["Beijing"],
-    contactNo: "000-0000000",
-  },
-  {
-    country: "Japan",
-    flag: "./contact-us/presence/japan.png",
-    address:
-      "Estancia IT Park, Plot no. 140, 151,GST Road, Vallancheri,Chengalpattu District - 603 202, India",
-    cities: ["Yokohama"],
-    contactNo: "000-0000000",
-  },
-  {
-    country: "India",
-    flag: "./contact-us/presence/india.png",
-    address:
-      "Estancia IT Park, Plot no. 140, 151,GST Road, Vallancheri,Chengalpattu District - 603 202, India",
-    cities: [
-      "CHENNAI",
-      "DELHI (NCR)",
-      "KOLKATA",
-      "KOLKATA",
-      "KOLKATA",
-      "KOLKATA",
+    address: "Chaoyang District, Beijing, 100020, China",
+    contactNo: "+86 10-12345678",
+    locations: [
+      {
+        city: "Beijing",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+86 10-12345678",
+      },
+      {
+        city: "Shanghai",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+86 21-12345678",
+      },
+
+      {
+        city: "Hong Kong",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+86 852-12345678",
+      },
     ],
-    contactNo: "000-0000000",
-  },
-  {
-    country: "China",
-    flag: "./contact-us/presence/china.png",
-    address:
-      "Estancia IT Park, Plot no. 140, 151,GST Road, Vallancheri,Chengalpattu District - 603 202, India",
-    cities: ["Beijing"],
-    contactNo: "000-0000000",
   },
   {
     country: "Japan",
+    continent: "ASIA-PACIFIC",
     flag: "./contact-us/presence/japan.png",
-    address:
-      "Estancia IT Park, Plot no. 140, 151,GST Road, Vallancheri,Chengalpattu District - 603 202, India",
-    cities: ["Yokohama"],
-    contactNo: "000-0000000",
+    address: "Shibuya, Tokyo, 150-0002, Japan",
+    contactNo: "+81 3-12345678",
+    locations: [
+      {
+        city: "Tokyo",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+81 3-12345678",
+      },
+      {
+        city: "Osaka",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+81 46-12345678",
+      },
+      {
+        city: "Kyoto",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+81 75-12345678",
+      },
+      {
+        city: "Busan",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+81 54-12345678",
+      },
+    ],
+  },
+  {
+    country: "South Korea",
+    continent: "ASIA-PACIFIC",
+    flag: "./contact-us/presence/india.png",
+    address: "Gangnam District, Seoul, 06022, South Korea",
+    contactNo: "+82 2-12345678",
+    locations: [
+      {
+        city: "Seoul",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+82 2-12345678",
+      },
+      {
+        city: "Depok",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+82 30-12345678",
+      },
+      {
+        city: "Surabaya",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+82 31-12345678",
+      },
+      {
+        city: "Jogja",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+82 27-12345678",
+      },
+    ],
+  },
+  {
+    country: "Indonesia",
+    continent: "ASIA-PACIFIC",
+    flag: "./contact-us/presence/india.png",
+    address: "Central Jakarta, 10110, Indonesia",
+    contactNo: "+62 21-12345678",
+    locations: [
+      {
+        city: "Jakarta",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+62 21-12345678",
+      },
+      {
+        city: "Bandung",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+62 22-12345678",
+      },
+      {
+        city: "Surabaya",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+62 31-12345678",
+      },
+    ],
+  },
+  {
+    country: "Thailand",
+    continent: "ASIA-PACIFIC",
+    flag: "./contact-us/presence/india.png",
+    address: "Sukhumvit, Bangkok, 10110, Thailand",
+    contactNo: "+66 2-12345678",
+    locations: [
+      {
+        city: "Bangkok",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+66 2-12345678",
+      },
+      {
+        city: "Phuket",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+66 9-12345678",
+      },
+      {
+        city: "Damascus",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+66 9-12345678",
+      },
+      {
+        city: "Beirut",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+66 9-12345678",
+      },
+    ],
+  },
+
+  // --- NORTH AFRICA (6) ---
+  {
+    country: "Egypt",
+    continent: "AFRICA",
+    flag: "./contact-us/presence/india.png",
+    address: "Maadi, Cairo, 11728, Egypt",
+    contactNo: "+20 2-12345678",
+    locations: [
+      {
+        city: "Cairo",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+20 2-12345678",
+      },
+      {
+        city: "Alexandria",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+20 2-12345678",
+      },
+      {
+        city: "Aswan",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+20 2-12345678",
+      },
+      {
+        city: "Asyut",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+20 2-12345678",
+      },
+    ],
+  },
+  {
+    country: "Algeria",
+    continent: "AFRICA",
+    flag: "./contact-us/presence/india.png",
+    address: "Hydra, Algiers, 16035, Algeria",
+    contactNo: "+213 21-987654",
+    locations: [
+      {
+        city: "Algiers",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+213 21-987654",
+      },
+    ],
+  },
+  {
+    country: "Morocco",
+    continent: "AFRICA",
+    flag: "./contact-us/presence/india.png",
+    address: "Gueliz, Marrakech, 40000, Morocco",
+    contactNo: "+212 5-12345678",
+    locations: [
+      {
+        city: "Marrakech",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+212 5-12345678",
+      },
+    ],
+  },
+  {
+    country: "Tunisia",
+    continent: "AFRICA",
+    flag: "./contact-us/presence/india.png",
+    address: "Lac II, Tunis, 1053, Tunisia",
+    contactNo: "+216 71-987654",
+    locations: [
+      {
+        city: "Tunis",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+216 71-987654",
+      },
+    ],
+  },
+  {
+    country: "Libya",
+    continent: "AFRICA",
+    flag: "./contact-us/presence/india.png",
+    address: "Gargaresh, Tripoli, 11223, Libya",
+    contactNo: "+218 21-123456",
+    locations: [
+      {
+        city: "Tripoli",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+218 21-123456",
+      },
+    ],
+  },
+  {
+    country: "Sudan",
+    continent: "AFRICA",
+    flag: "./contact-us/presence/india.png",
+    address: "Central Khartoum, Sudan, 11111",
+    contactNo: "+249 9-98765432",
+    locations: [
+      {
+        city: "Khartoum",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+249 9-98765432",
+      },
+    ],
+  },
+
+  // --- EUROPE (6) ---
+  {
+    country: "United Kingdom",
+    continent: "EUROPE",
+    flag: "./contact-us/presence/india.png",
+    address: "Canary Wharf, London, E14 5AB, UK",
+    contactNo: "+44 20-12345678",
+    locations: [
+      {
+        city: "London",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+44 20-12345678",
+      },
+    ],
+  },
+  {
+    country: "Germany",
+    continent: "EUROPE",
+    flag: "./contact-us/presence/india.png",
+    address: "Alexanderplatz, Berlin, 10178, Germany",
+    contactNo: "+49 30-98765432",
+    locations: [
+      {
+        city: "Berlin",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+49 30-98765432",
+      },
+    ],
+  },
+  {
+    country: "France",
+    continent: "EUROPE",
+    flag: "./contact-us/presence/india.png",
+    address: "Champs-Élysées, Paris, 75008, France",
+    contactNo: "+33 1-12345678",
+    locations: [
+      {
+        city: "Paris",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+33 1-12345678",
+      },
+    ],
+  },
+  {
+    country: "Italy",
+    continent: "EUROPE",
+    flag: "./contact-us/presence/india.png",
+    address: "Piazza Navona, Rome, 00186, Italy",
+    contactNo: "+39 06-98765432",
+    locations: [
+      {
+        city: "Rome",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+39 06-98765432",
+      },
+    ],
+  },
+  {
+    country: "Spain",
+    continent: "EUROPE",
+    flag: "./contact-us/presence/india.png",
+    address: "Gran Via, Madrid, 28013, Spain",
+    contactNo: "+34 91-12345678",
+    locations: [
+      {
+        city: "Madrid",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+34 91-12345678",
+      },
+    ],
+  },
+  {
+    country: "Netherlands",
+    continent: "EUROPE",
+    flag: "./contact-us/presence/india.png",
+    address: "Dam Square, Amsterdam, 1012 NP, Netherlands",
+    contactNo: "+31 20-98765432",
+    locations: [
+      {
+        city: "Amsterdam",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+31 20-98765432",
+      },
+    ],
+  },
+
+  {
+    country: "United States",
+    continent: "NORTH AMERICA",
+    flag: "./contact-us/presence/india.png",
+
+    locations: [
+      {
+        city: "New York",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+1 212-1234567",
+      },
+    ],
+  },
+  {
+    country: "Canada",
+    continent: "NORTH AMERICA",
+    flag: "./contact-us/presence/india.png",
+    address: "Toronto, Canada",
+    contactNo: "+1 416-9876543",
+    locations: [
+      {
+        city: "Toronto",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+1 416-9876543",
+      },
+    ],
+  },
+  {
+    country: "Mexico",
+    continent: "NORTH AMERICA",
+    flag: "./contact-us/presence/india.png",
+    address: "Mexico City, Mexico",
+    contactNo: "+52 55-12345678",
+    locations: [
+      {
+        city: "Mexico City",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+52 55-12345678",
+      },
+    ],
+  },
+  {
+    country: "Costa Rica",
+    continent: "NORTH AMERICA",
+    flag: "./contact-us/presence/india.png",
+    address: "San José, Costa Rica",
+    contactNo: "+506 2-9876543",
+    locations: [
+      {
+        city: "San José",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+506 2-9876543",
+      },
+    ],
+  },
+  {
+    country: "Panama",
+    continent: "NORTH AMERICA",
+    flag: "./contact-us/presence/india.png",
+    address: "Panama City, Panama",
+    contactNo: "+507 3-6543210",
+    locations: [
+      {
+        city: "Panama City",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+507 3-6543210",
+      },
+    ],
+  },
+  {
+    country: "Jamaica",
+    continent: "NORTH AMERICA",
+    flag: "./contact-us/presence/india.png",
+    address: "Kingston, Jamaica",
+    contactNo: "+1 876-5432109",
+    locations: [
+      {
+        city: "Kingston",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+1 876-5432109",
+      },
+    ],
   },
 ];
+
+const syne = Syne({ subsets: ["latin"], display: "swap" });
 
 const GlobalPresence = () => {
   const sliderRef = useRef(null);
+  const [activeIndexNobile, setActiveIndexMobile] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
-  const slides = [1, 2, 3, 4, 5, 6];
-  const totalSlides = slides.length;
 
+  const [continent, setContinent] = useState("ASIA-PACIFIC");
+  const continentWiseCount = data.reduce((acc, item) => {
+    acc[item.continent] = (acc[item.continent] || 0) + 1;
+    return acc;
+  }, {});
+
+  const totalSlides = continentWiseCount[continent] || 0;
   const settings = {
     dots: false,
     arrows: false,
     infinite: false,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    vertical: true,
-    verticalSwiping: true,
-    afterChange: (current) => setActiveIndex(current),
+    variableWidth: false,
+    afterChange: (current) => setActiveIndexMobile(current),
   };
 
-  const ssettings = {
-    dots: false,
-    arrows: false,
-    infinite: false,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    variableWidth: true,
+  const handleNext = () => {
+    if (activeIndex < totalSlides - 1) {
+      setActiveIndex(activeIndex + 1);
+    }
   };
 
-  const innerSliderRef = useRef(null);
-  const [innerActiveIndex, setInnerActiveIndex] = useState(0);
-
+  const handlePrev = () => {
+    if (activeIndex > 0) {
+      setActiveIndex(activeIndex - 1);
+    }
+  };
   return (
-    <div className="main-container grid grid-cols-2 gap-5 py-32">
-      <div className="flex gap-4">
-        <div className="flex flex-col items-center justify-center gap-2">
-          <button
-            className={cn(
-              "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
-              {
-                "cursor-not-allowed opacity-50": activeIndex === 0,
-                "hover:bg-gray-200": activeIndex !== 0,
-              },
-            )}
-            style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
-            onClick={() => sliderRef.current?.slickPrev()}
-          >
-            <BsArrowUpShort size={32} />
-          </button>
-          <button
-            className={cn(
-              "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
-              {
-                "cursor-not-allowed opacity-50": activeIndex >= totalSlides - 3,
-                "hover:bg-gray-200": activeIndex < totalSlides - 3,
-              },
-            )}
-            style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
-            onClick={() => sliderRef.current?.slickNext()}
-          >
-            <BsArrowDownShort size={32} />
-          </button>
-        </div>
-        <Slider ref={sliderRef} {...settings}>
-          {[1, 2, 3, 4, 5, 6].map((index) => {
-            return (
-              <div
-                key={index}
-                className="relative my-6 rounded-[1.25rem] border p-6"
-              >
-                <div
-                  className="absolute inset-0 rounded-[1.25rem] bg-cover bg-no-repeat"
-                  style={{
-                    backgroundImage: 'url("./footer/bg.jpeg")',
-                  }}
+    <div className="relative py-32">
+      {/* desktop screen */}
+      <div className="main-container hidden gap-10 lg:flex xl:gap-10">
+        <div>
+          <div className="relative block w-full overflow-hidden lg:h-[950px] xl:h-[950px] 2xl:h-[1070px]">
+            <div
+              className="flex w-full flex-row flex-nowrap gap-5 transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateY(-${(activeIndex / (totalSlides - 3)) * 50}%)`,
+              }}
+            >
+              <div className="flex flex-col gap-5">
+                {data
+                  .filter(({ continent: c }) => !continent || c === continent)
+                  .map(({ country, flag, locations }, index) => {
+                    return (
+                      <CountryCard
+                        key={index}
+                        country={country}
+                        flag={flag}
+                        locations={locations}
+                        index={index}
+                        continent={continent}
+                      />
+                    );
+                  })}
+              </div>
+              <div className="h-full min-w-[30%] translate-y-16">
+                <img
+                  src="/group-line.svg"
+                  className="min-h-full md:w-[50px] lg:w-[40px] xl:w-[40px] 2xl:w-[45px]"
                 />
-                <div className="absolute inset-0 rounded-[1.25rem] bg-[#080707]/50"></div>
-                <div className="relative flex flex-col gap-5 text-white">
-                  <div className="flex items-center justify-between">
-                    <span className="text-4xl font-bold">India</span>
-                    <img src="./contact-us/presence/india.png" />
-                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-14 w-[30%] 2xl:flex-1">
+          <div className="flex w-full flex-col gap-6">
+            <div className="flex flex-col items-start justify-start gap-5">
+              <div
+                className={cn(
+                  "text-[35px] leading-none font-semibold capitalize lg:text-[50px] lg:text-wrap",
+                  syne.className,
+                )}
+              >
+                Our Global Presence
+              </div>
+              <HRLine1 />
+            </div>
+            <div className="text-center lg:text-start">
+              <span className="text-secondary relative text-lg font-normal">
+                Connect with one of our global offices...
+                <br /> or feel free to just send us a nifty postcard. We won&apos;t
+                mind!
+              </span>
+            </div>
+            <div className="flex justify-start">
+              <div className="flex w-[320px] flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow">
+                {regions.map((region, index) => (
+                  <React.Fragment key={region}>
+                    <button
+                      className={cn(
+                        "w-full cursor-pointer px-4 py-2.5 text-left text-[22px] font-bold transition-colors",
+                        region === continent
+                          ? "bg-primary text-white"
+                          : "bg-white text-gray-800",
+                      )}
+                      onClick={() => {
+                        setContinent(region);
+                      }}
+                    >
+                      {region}
+                    </button>
+                    {index < regions.length - 1 && (
+                      <hr className="border-gray-200" />
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute z-50 hidden h-full flex-col items-center justify-center gap-2 lg:top-10 lg:left-1 lg:flex xl:top-10 xl:left-36 2xl:top-0 2xl:left-36">
+        <button
+          className={cn(
+            "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
+            {
+              "cursor-not-allowed opacity-50": activeIndex === 0,
+              "bg-primary opacity-100": activeIndex !== 0,
+            },
+          )}
+          style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
+          onClick={handlePrev}
+        >
+          <BsArrowUpShort
+            size={32}
+            color={activeIndex !== 0 ? "white" : "black"}
+          />
+        </button>
+        <button
+          className={cn(
+            "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
+            {
+              "cursor-not-allowed opacity-50": activeIndex >= totalSlides - 3,
+              "bg-primary opacity-100": activeIndex < totalSlides - 3,
+            },
+          )}
+          style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
+          onClick={handleNext}
+          disabled={activeIndex >= totalSlides - 3}
+        >
+          <BsArrowDownShort
+            size={32}
+            color={activeIndex < totalSlides - 3 ? "white" : "black"}
+          />
+        </button>
+      </div>
 
-                  <div className="mx-2 my-3 w-full border-t-2 border-dotted border-white" />
-
+      {/* mobile and Tablet screen */}
+      <div className="flex flex-col gap-10 lg:hidden">
+        <div className="mt-14 lg:flex-1">
+          <div className="flex w-full flex-col gap-6">
+            <div className="flex flex-col items-center justify-center gap-5">
+              <div
+                className={cn(
+                  "text-[35px] leading-none font-semibold capitalize",
+                  syne.className,
+                )}
+              >
+                Our Global Presence
+              </div>
+              <HRLine1 />
+            </div>
+            <div className="text-center">
+              <span className="text-secondary relative text-lg font-normal">
+                Connect with one of our global offices...
+                <br /> or feel free to just send us a nifty postcard. We won&apos;t
+                mind!
+              </span>
+            </div>
+            <div className="flex justify-center">
+              <div className="flex w-[320px] flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow">
+                {regions.map((region, index) => (
+                  <React.Fragment key={region}>
+                    <button
+                      className={cn(
+                        "w-full cursor-pointer px-4 py-2.5 text-left text-[22px] font-bold transition-colors",
+                        region === continent
+                          ? "bg-primary text-white"
+                          : "bg-white text-gray-800",
+                      )}
+                      onClick={() => setContinent(region)}
+                    >
+                      {region}
+                    </button>
+                    {index < regions.length - 1 && (
+                      <hr className="border-gray-200" />
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative flex justify-center">
+          <Slider
+            ref={sliderRef}
+            {...settings}
+            className="h-full w-[370px] sm:w-[500px]"
+          >
+            {data
+              .filter(({ continent: c }) => !continent || c === continent)
+              .map(({ country, flag, locations }, index) => {
+                return (
                   <div
                     key={index}
-                    className="relative mx-auto flex w-full items-center gap-2"
+                    className="relative min-h-[270px] rounded-[1.25rem] border p-6"
                   >
-                    <button
-                      className={cn("cursor-pointer rounded-full p-2", {
-                        "bg-white text-black": innerActiveIndex === 0,
-                        "bg-primary text-white": innerActiveIndex !== 0,
-                      })}
-                      onClick={() => innerSliderRef.current?.slickPrev()}
-                      disabled={innerActiveIndex === 0}
-                    >
-                      <BsArrowLeftShort size={24} />
-                    </button>
-                    <div className="w-full overflow-hidden">
-                      <Slider
-                        ref={innerSliderRef}
-                        {...ssettings}
-                        afterChange={(current) => setInnerActiveIndex(current)}
-                      >
-                        {locations?.map((city, index) => (
-                          <div key={index} className="px-1">
-                            <span
-                              className={cn(
-                                "rounded-lg border-[0.5px] border-white bg-[#182844] px-4 py-1 text-xl font-bold text-white transition-all",
-                                {
-                                  "bg-primary border-transparent text-white":
-                                    index === innerActiveIndex,
-                                  "bg-[#0F1A2E] text-gray-200":
-                                    index !== innerActiveIndex,
-                                },
-                              )}
-                            >
-                              {city}
-                            </span>
-                          </div>
-                        ))}
-                      </Slider>
-                    </div>
-                    <button
-                      className={cn("cursor-pointer rounded-full p-2", {
-                        "bg-white text-black":
-                          innerActiveIndex === locations.length - 1,
-                        "bg-primary text-white":
-                          innerActiveIndex !== locations.length - 1,
-                      })}
-                      disabled={innerActiveIndex === locations.length - 1}
-                      onClick={() => innerSliderRef.current?.slickNext()}
-                    >
-                      <BsArrowRightShort size={24} />
-                    </button>
-                  </div>
+                    <div
+                      className="absolute inset-0 rounded-[1.25rem] bg-cover bg-no-repeat"
+                      style={{ backgroundImage: 'url("./footer/bg.jpeg")' }}
+                    />
+                    <div className="absolute inset-0 rounded-[1.25rem] bg-[#080707]/50"></div>
 
-                  <span className="bg-primary inline-flex w-1/4 justify-center rounded-lg px-2 py-1 text-xl font-bold uppercase">
-                    Beijing
-                  </span>
-                  <div className="flex items-start justify-start gap-4">
-                    <img src="./contact-us/presence/map.svg" />
-                    <div className="flex flex-col items-start gap-5">
-                      <span className="text-lg font-normal">
-                        Estancia IT Park, Plot no. 140, 151,
-                        <br />
-                        GST Road, Vallancheri,
-                        <br />
-                        Chengalpattu District - 603 202, India
-                      </span>
-                      <span className="relative inline-flex w-fit items-center justify-between gap-2.5 rounded-full border border-white/10 bg-white/5 p-4 backdrop-blur-[32px] lg:py-2.5 lg:pr-5 lg:pl-16">
-                        <img
-                          src="./contact-us/presence/phone.svg"
-                          className="absolute top-1/2 left-2 -translate-y-1/2"
-                        />
-                        <span className="text-lg text-white capitalize">
-                          000-0000000
+                    <div className="relative flex flex-col gap-4 text-white">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xl font-bold md:text-2xl lg:text-4xl">
+                          {country}
                         </span>
-                      </span>
+                        <img
+                          src={flag}
+                          className="h-10 object-cover"
+                          alt={country}
+                        />
+                      </div>
+
+                      <div className="mx-2 w-full border-t-2 border-dotted border-white" />
+
+                      <div className="relative mx-auto flex w-full items-center gap-2">
+                        <CitySlider
+                          item={locations}
+                          index={index}
+                          continent={continent}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
+                );
+              })}
+          </Slider>
+          <div className="absolute -bottom-16 text-black">
+            <div className="flex items-center gap-x-16">
+              <button
+                className={cn(
+                  "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
+                  {
+                    "cursor-not-allowed opacity-50": activeIndexNobile === 0,
+                    "bg-primary opacity-100": activeIndexNobile !== 0,
+                  },
+                )}
+                style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
+                onClick={() => sliderRef.current?.slickPrev()}
+              >
+                <BsArrowLeftShort
+                  size={32}
+                  color={activeIndexNobile !== 0 ? "white" : "black"}
+                />
+              </button>
+              <button
+                className={cn(
+                  "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
+                  {
+                    "cursor-not-allowed opacity-50":
+                      activeIndexNobile >= totalSlides - 3,
+                    "bg-primary opacity-100":
+                      activeIndexNobile < totalSlides - 3,
+                  },
+                )}
+                style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
+                onClick={() => sliderRef.current?.slickNext()}
+              >
+                <BsArrowRightShort
+                  size={32}
+                  color={
+                    activeIndexNobile < totalSlides - 3 ? "white" : "black"
+                  }
+                />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
