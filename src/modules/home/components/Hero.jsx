@@ -31,14 +31,14 @@ const Hero = () => {
       <div className="main-container relative z-30 flex flex-col pt-4">
         <Header />
         <div className="relative mx-auto flex flex-col items-center gap-20 py-24 text-center 2xl:w-[75%]">
-          <div className="mx-2 text-[65px] leading-none capitalize lg:mx-0 lg:text-[7.5rem]">
+          <div className="mx-2 text-[4.5rem] leading-none capitalize lg:mx-0 lg:text-[7.5rem]">
             <span
               className="flex flex-wrap justify-center font-extrabold text-[#16072F]"
               style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
             >
               <span className="relative">
                 Your&nbsp;
-                <span className="absolute -top-6 -left-10 lg:-top-4">
+                <span className="absolute -top-8 -left-10 lg:-top-4">
                   <img src="/lines.png" />
                 </span>
               </span>

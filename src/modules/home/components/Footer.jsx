@@ -1,6 +1,5 @@
 "use client";
 
-import ChatWithUs from "@/components/shared/ChatWithUs";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -170,7 +169,7 @@ const Footer = () => {
                     : "max-h-0 scale-y-95 opacity-0 duration-300",
                 )}
               >
-                <div className="flex flex-col gap-3 p-2 pb-4 text-center text-lg text-white">
+                <div className="flex flex-col gap-3 p-2 pb-4 text-lg text-white">
                   {obj?.items?.length ? (
                     obj?.items?.map((navlink, index) => (
                       <Link href={navlink?.link ?? "#"} key={index}>
@@ -226,9 +225,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Chat */}
-      <ChatWithUs />
     </div>
   );
 };

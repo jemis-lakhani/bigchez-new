@@ -16,7 +16,10 @@ const Header = () => {
   return (
     <div className="flex flex-row items-center justify-center md:justify-between">
       <div className="flex justify-center object-contain">
-        <Link href="/">
+        <Link
+          href="/"
+          className="flex items-center justify-center md:justify-start"
+        >
           <img src="/logo.png" className="w-[65%] 2xl:w-auto" />
         </Link>
       </div>

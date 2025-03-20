@@ -9,19 +9,25 @@ const Careers = () => {
   return (
     <div
       id="carriers"
-      className="relative flex items-center justify-center py-32"
+      className="relative flex items-center justify-center py-40 md:py-32"
     >
       <div
-        className="absolute inset-0 bg-contain bg-center bg-no-repeat 2xl:bg-cover"
+        className="absolute inset-0 hidden bg-contain bg-center bg-no-repeat md:block 2xl:bg-cover"
         style={{
           backgroundImage: 'url("./careers/bg.png")',
         }}
       ></div>
+      <div
+        className="absolute inset-0 block bg-cover bg-center bg-no-repeat md:hidden"
+        style={{
+          backgroundImage: 'url("./careers/bg-mobile.png")',
+        }}
+      ></div>
 
-      <div className="relative z-10 mx-2 flex h-full w-2/3 flex-col items-center justify-center gap-8 rounded-4xl border border-white bg-[#182844] py-4 lg:rounded-[50px] lg:py-12 xl:w-1/2 xl:py-20">
+      <div className="relative z-10 mx-2 flex h-full w-full flex-col items-center justify-center gap-6 rounded-4xl border border-white bg-[#182844] py-4 md:w-2/3 lg:rounded-[50px] lg:py-12 xl:w-1/2 xl:py-20">
         <div
           className={cn(
-            "relative z-2 flex flex-wrap items-center justify-center gap-2 text-5xl text-white lg:text-6xl xl:text-7xl",
+            "relative z-2 flex flex-wrap items-center justify-center gap-2 text-[3.25rem] text-white lg:text-6xl xl:text-7xl",
             outfit.className,
           )}
         >
@@ -34,7 +40,7 @@ const Careers = () => {
           <span className="bigchez-text">BigChez</span>
           &nbsp;Team
         </div>
-        <span className="text-center text-sm font-normal text-white lg:text-2xl">
+        <span className="text-center text-lg font-normal text-white lg:text-2xl">
           We’re looking for innovators, creators, and problem
           <br /> solvers. Ready to build the future of tech with us?
         </span>

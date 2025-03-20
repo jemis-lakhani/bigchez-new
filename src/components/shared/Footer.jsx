@@ -1,9 +1,7 @@
 "use client";
 
-import ChatWithUs from "@/components/shared/ChatWithUs";
 import { Button } from "@/components/ui/Button";
 import { useRouter } from "next/navigation";
-import React from "react";
 
 const itemClasses = "text-lg";
 
@@ -52,9 +50,6 @@ const Footer = ({ title, btnTxt, btnLink }) => {
           </div>
         </div>
       </div>
-
-      {/* Chat */}
-      <ChatWithUs />
     </div>
   );
 };
