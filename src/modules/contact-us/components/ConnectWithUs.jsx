@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 const outfit = Outfit({ subsets: ["latin"], display: "swap" });
 
 const inputClasses =
-  "b-2 text-[#BDB9B9] w-full rounded-lg bg-white p-3 text-sm font-extralight focus:!border-2 focus:!border-black focus:outline-none lg:rounded-2xl lg:p-4 lg:text-2xl";
+  "b-2 w-full rounded-lg bg-white p-3 text-base font-extralight focus:!border-1 focus:!border-black focus:outline-none lg:rounded-2xl lg:p-4 lg:text-xl";
 
 const ConnectWithUs = () => {
   const {
@@ -38,9 +38,9 @@ const ConnectWithUs = () => {
   };
 
   const data = [
-    { title: "Connect on WhatsApp", icon: "./contact-us/whatsapp.svg" },
-    { title: "Call us directly", icon: "./contact-us/phone.svg" },
-    { title: "Email us", icon: "./contact-us/mail.svg" },
+    { title: "Chat on WhatsApp", icon: "./contact-us/whatsapp.svg" },
+    { title: "Call Us Directly", icon: "./contact-us/phone.svg" },
+    { title: "Send an Email", icon: "./contact-us/mail.svg" },
   ];
 
   return (
@@ -65,7 +65,7 @@ const ConnectWithUs = () => {
         <span className="text-center text-[50px] font-bold text-white capitalize">
           Connect with us
         </span>
-        <div className="relative mx-auto w-[90%] lg:w-[45%] 2xl:w-[35%]">
+        <div className="relative mx-auto w-[90%] md:w-[50%] lg:w-[45%] xl:w-[40%] 2xl:w-[35%]">
           <div className="absolute right-0 bottom-0 -z-10 aspect-square w-1/3 translate-x-1/8 translate-y-1/4 rounded-full bg-[#FFA64C] lg:-right-7 lg:-bottom-7 lg:w-1/2 lg:translate-x-1/6 lg:translate-y-1/8"></div>
           <form
             onSubmit={handleSubmit(onSubmit)}

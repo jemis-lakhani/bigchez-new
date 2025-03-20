@@ -3,6 +3,7 @@
 import ChatWithUs from "@/components/shared/ChatWithUs";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
   MdOutlineKeyboardArrowDown,
@@ -75,6 +76,8 @@ const Footer = () => {
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const router = useRouter();
 
   return (
     <div className="bg-secondary relative py-10 lg:py-20">
@@ -202,11 +205,20 @@ const Footer = () => {
             <img src="./footer/fb.svg" />
           </div>
           <div className="flex flex-wrap justify-center gap-3">
-            <span className={itemClasses}>Bigchez Home</span>
+            <span className={itemClasses} onClick={() => router.push("/")}>
+              Bigchez Home
+            </span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>
-            <span className={itemClasses}>Contact Us</span>
+            <span
+              className={itemClasses}
+              onClick={() => router.push("contact-us")}
+            >
+              Contact Us
+            </span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>
-            <span className={itemClasses}>Our Blog</span>
+            <span className={itemClasses} onClick={() => router.push("/blog")}>
+              Our Blog
+            </span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>
             <span className={itemClasses}> Terms of Service</span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>

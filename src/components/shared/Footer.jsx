@@ -1,10 +1,14 @@
+"use client";
+
 import ChatWithUs from "@/components/shared/ChatWithUs";
 import { Button } from "@/components/ui/Button";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const itemClasses = "text-lg";
 
 const Footer = ({ title, btnTxt, btnLink }) => {
+  const router = useRouter();
   return (
     <div className="bg-secondary relative py-10 lg:py-20">
       <div className="main-container flex flex-col gap-20">
@@ -14,7 +18,7 @@ const Footer = ({ title, btnTxt, btnLink }) => {
           </span>
           <Button
             type="submit"
-            className="!px-12 !py-3.5 text-base capitalize lg:!px-18 lg:!py-4 lg:!text-2xl"
+            className="!px-12 !py-3.5 text-xl capitalize lg:!px-18 lg:!py-4 lg:!text-2xl"
           >
             {btnTxt}
           </Button>
@@ -27,11 +31,20 @@ const Footer = ({ title, btnTxt, btnLink }) => {
             <img src="./footer/fb.svg" />
           </div>
           <div className="flex flex-wrap justify-center gap-3">
-            <span className={itemClasses}>Bigchez Home</span>
+            <span className={itemClasses} onClick={() => router.push("/")}>
+              Bigchez Home
+            </span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>
-            <span className={itemClasses}>Contact Us</span>
+            <span
+              className={itemClasses}
+              onClick={() => router.push("/contact-us")}
+            >
+              Contact Us
+            </span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>
-            <span className={itemClasses}>Our Blog</span>
+            <span className={itemClasses} onClick={() => router.push("/blog")}>
+              Our Blog
+            </span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>
             <span className={itemClasses}> Terms of Service</span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>

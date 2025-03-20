@@ -163,7 +163,7 @@ const GlobalPresence = () => {
                     <img src="./contact-us/presence/india.png" />
                   </div>
 
-                  <div class="mx-2 my-3 w-full border-t-2 border-dotted border-white" />
+                  <div className="mx-2 my-3 w-full border-t-2 border-dotted border-white" />
 
                   <div
                     key={index}

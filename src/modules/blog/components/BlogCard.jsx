@@ -3,11 +3,11 @@ import React from "react";
 
 const BlogCard = ({ data }) => {
   return (
-    <div className="group relative flex flex-col gap-4 rounded-2xl border-[1px] border-[#E7E5EA] bg-white p-4 lg:gap-5 lg:rounded-3xl lg:p-10 lg:pb-12">
+    <div className="group relative flex flex-col gap-4 rounded-2xl border-[1px] border-[#E7E5EA] bg-white p-6 lg:gap-5 lg:rounded-3xl lg:p-10 lg:pb-12">
       <div className="relative h-[140px] lg:h-[257px]">
         <img
           src="/blog/blog-img.png"
-          className="h-full w-full rounded-lg bg-cover bg-center lg:rounded-[15px]"
+          className="h-full w-full rounded-lg bg-cover bg-center object-cover lg:rounded-[15px]"
         />
         <div className="border-primary absolute bottom-3 left-3 flex items-center rounded-3xl border bg-white p-1 lg:bottom-5 lg:left-5 lg:p-1.5">
           <div className="bg-primary-gradient h-3 w-3 rounded-full lg:h-5 lg:w-5"></div>
@@ -17,13 +17,14 @@ const BlogCard = ({ data }) => {
         </div>
       </div>
       <div className="mt-2 flex justify-start gap-4">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-center gap-2">
           <svg
             width="14"
             height="16"
             viewBox="0 0 14 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
           >
             <g clipPath="url(#clip0_190_298)">
               <path
@@ -53,7 +54,7 @@ const BlogCard = ({ data }) => {
               </clipPath>
             </defs>
           </svg>
-          <span className="text-xs font-medium text-[#737887] lg:text-lg">
+          <span className="text-base font-medium text-[#737887] lg:text-lg">
             {data?.date}
           </span>
         </div>
@@ -64,6 +65,7 @@ const BlogCard = ({ data }) => {
             viewBox="0 0 15 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
           >
             <g clipPath="url(#clip0_190_302)">
               <path
@@ -93,22 +95,24 @@ const BlogCard = ({ data }) => {
               </clipPath>
             </defs>
           </svg>
-          <span className="text-xs font-medium text-[#737887] lg:text-lg">
+          <span className="text-base font-medium text-[#737887] lg:text-lg">
             {data?.author}
           </span>
         </div>
       </div>
-      <div className="text-base font-medium lg:text-[28px]">{data.title}</div>
-      <div className="text-xs leading-4 text-[#141D38] lg:text-xl lg:leading-9">
+      <div className="text-xl leading-9 font-medium lg:text-[28px]">
+        {data.title}
+      </div>
+      <div className="text-base leading-7 text-black lg:text-xl lg:leading-9">
         {data?.desc}
-        <Link href="#" className="border-b">
+        <Link href="#" className="border-b-1">
           &nbsp;read more
         </Link>
       </div>
       <div>
         <Link
           href={data?.link ?? "#"}
-          className="relative inline-flex items-center text-xs font-semibold text-[#141D38] lg:text-xl"
+          className="relative inline-flex items-center text-base font-semibold text-[#141D38] lg:text-xl"
         >
           Learn More
           <svg
@@ -117,7 +121,7 @@ const BlogCard = ({ data }) => {
             viewBox="0 0 25 8"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="mt-1 ml-1 fill-[#141D38]"
+            className="ml-1 fill-[#141D38]"
           >
             <g clipPath="url(#clip0_190_311)">
               <path d="M20.254 4.14444L1.15527 4.12828C1.05582 4.12828 0.960434 4.08675 0.890108 4.01282C0.819782 3.93889 0.780273 3.83861 0.780273 3.73406C0.780273 3.62951 0.819782 3.52924 0.890108 3.45531C0.960434 3.38138 1.05582 3.33984 1.15527 3.33984L20.2544 3.35601C20.3539 3.35601 20.4493 3.39754 20.5196 3.47147C20.5899 3.5454 20.6294 3.64567 20.6294 3.75022C20.6294 3.85478 20.5899 3.95505 20.5196 4.02898C20.4493 4.10291 20.3535 4.14444 20.254 4.14444Z" />
@@ -134,7 +138,7 @@ const BlogCard = ({ data }) => {
               </clipPath>
             </defs>
           </svg>
-          <span className="bg-primary absolute bottom-[-3px] left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full"></span>
+          <span className="bg-primary absolute bottom-[-3px] left-0 h-[1px] w-full transition-all duration-300 group-hover:w-full md:w-0"></span>
         </Link>
       </div>
     </div>

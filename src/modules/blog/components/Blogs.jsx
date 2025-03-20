@@ -77,15 +77,19 @@ const Blogs = () => {
       id="blogs"
     >
       <div className="main-container relative z-30 flex flex-col-reverse justify-between gap-12 lg:flex-row lg:gap-0">
-        <div className="flex flex-[0_0_60%] flex-col items-center gap-14 lg:gap-20">
+        <div className="flex flex-[0_0_60%] flex-col items-center gap-14 lg:gap-14">
           {data?.slice(0, showMore ? data.length : 3)?.map((item, index) => {
             return <BlogCard key={index} data={item} />;
           })}
           <Button className="btn-h-86" onClick={() => setShowMore(!showMore)}>
             {showMore ? "View Less" : "View All"}
             <IoArrowDownCircleOutline
-              size={32}
-              className={showMore ? "rotate-180 transition-transform" : ""}
+              size={30}
+              className={
+                showMore
+                  ? "ml-1 rotate-180 transition-transform"
+                  : "ml-6 transition-transform"
+              }
             />
           </Button>
         </div>
