@@ -52,7 +52,7 @@ const ConnectWithUs = () => {
         ></div>
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="main-container relative z-20">
-          <div className="flex justify-around gap-6 pt-20 pb-72 lg:grid lg:grid-cols-3">
+          <div className="flex justify-center gap-8 pt-20 pb-72 lg:grid lg:grid-cols-3 lg:justify-around lg:gap-6">
             {data?.map((item, index) => (
               <Card key={index} index={index} data={item} />
             ))}
@@ -62,7 +62,7 @@ const ConnectWithUs = () => {
 
       {/*  Form */}
       <div className="relative z-30 -mt-56 mb-56 flex flex-col items-center gap-10">
-        <span className="text-center text-[50px] font-bold text-white capitalize">
+        <span className="text-center text-[40px] font-bold text-white capitalize md:text-[50px]">
           Connect with us
         </span>
         <div className="relative mx-auto w-[90%] md:w-[50%] lg:w-[45%] xl:w-[40%] 2xl:w-[35%]">

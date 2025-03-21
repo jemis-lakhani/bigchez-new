@@ -12,6 +12,7 @@ import { Syne } from "next/font/google";
 import HRLine1 from "@/components/ui/HRLine1";
 import Slider from "react-slick";
 import CountryCard from "./CountryCard";
+import clsx from "clsx";
 
 const regions = ["ASIA-PACIFIC", "EUROPE", "AFRICA", "NORTH AMERICA"];
 
@@ -577,6 +578,58 @@ const data = [
         ),
         contactNo: "+44 20-12345678",
       },
+      {
+        city: "Berlin",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+44 20-12345678",
+      },
+      {
+        city: "Munich",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+44 20-12345678",
+      },
+      {
+        city: "Düsseldorf",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+44 20-12345678",
+      },
+      {
+        city: "Cologne",
+        address: (
+          <span className="text-lg font-normal">
+            Estancia IT Park, Plot no. 140, 151,
+            <br />
+            GST Road, Vallancheri,
+            <br />
+            Chengalpattu District - 603 202, India
+          </span>
+        ),
+        contactNo: "+49 30-98765432",
+      },
     ],
   },
   {
@@ -825,9 +878,77 @@ const data = [
 
 const syne = Syne({ subsets: ["latin"], display: "swap" });
 
+const NavButton = ({ disabled, onClick, icon }) => (
+  <button
+    className={cn(
+      "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
+      {
+        "cursor-not-allowed opacity-50": disabled,
+        "bg-primary opacity-100": !disabled,
+      },
+    )}
+    style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
+    onClick={onClick}
+    disabled={disabled}
+  >
+    {icon}
+  </button>
+);
+
+const RegionSelector = ({
+  regions,
+  continent,
+  setContinent,
+  isAlign = false,
+}) => (
+  <div className={clsx("flex", isAlign ? "justify-center" : "justify-start")}>
+    <div className="flex w-[320px] flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow">
+      {regions.map((region, index) => (
+        <React.Fragment key={region}>
+          <button
+            className={cn(
+              "w-full cursor-pointer overflow-hidden px-4 py-2.5 text-left text-[22px] font-bold transition-colors",
+              region === continent
+                ? "bg-primary text-white"
+                : "bg-white text-gray-800",
+            )}
+            onClick={() => setContinent(region)}
+          >
+            {region}
+          </button>
+          {index < regions.length - 1 && <hr className="border-gray-200" />}
+        </React.Fragment>
+      ))}
+    </div>
+  </div>
+);
+
+const SectionHeader = ({ title, description, align = "start" }) => {
+  return (
+    <div className="flex w-full flex-col gap-6">
+      <div className={`flex flex-col items-${align} justify-start gap-5`}>
+        <div
+          className={clsx(
+            "text-[35px] leading-none font-semibold capitalize lg:text-[50px] lg:text-wrap",
+            syne.className,
+          )}
+        >
+          {title}
+        </div>
+        <HRLine1 />
+      </div>
+      <div className={`text-center lg:text-${align}`}>
+        <span className="text-secondary relative text-lg font-normal">
+          {description}
+        </span>
+      </div>
+    </div>
+  );
+};
+
 const GlobalPresence = () => {
   const sliderRef = useRef(null);
-  const [activeIndexNobile, setActiveIndexMobile] = useState(0);
+  const [activeIndexMobile, setActiveIndexMobile] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const [continent, setContinent] = useState("ASIA-PACIFIC");
@@ -837,13 +958,14 @@ const GlobalPresence = () => {
   }, {});
 
   const totalSlides = continentWiseCount[continent] || 0;
+
   const settings = {
     dots: false,
     arrows: false,
     infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    variableWidth: false,
+    // variableWidth: false,
     afterChange: (current) => setActiveIndexMobile(current),
   };
 
@@ -863,7 +985,7 @@ const GlobalPresence = () => {
       {/* desktop screen */}
       <div className="main-container hidden gap-10 lg:flex xl:gap-10">
         <div>
-          <div className="relative block w-full overflow-hidden lg:h-[950px] xl:h-[950px] 2xl:h-[1070px]">
+          <div className="relative block w-full overflow-hidden lg:h-[950px] xl:h-[950px] 2xl:h-[1080px]">
             <div
               className="flex w-full flex-row flex-nowrap gap-5 transition-transform duration-500 ease-in-out"
               style={{
@@ -895,140 +1017,74 @@ const GlobalPresence = () => {
             </div>
           </div>
         </div>
-        <div className="mt-14 w-[30%] 2xl:flex-1">
-          <div className="flex w-full flex-col gap-6">
-            <div className="flex flex-col items-start justify-start gap-5">
-              <div
-                className={cn(
-                  "text-[35px] leading-none font-semibold capitalize lg:text-[50px] lg:text-wrap",
-                  syne.className,
-                )}
-              >
-                Our Global Presence
-              </div>
-              <HRLine1 />
-            </div>
-            <div className="text-center lg:text-start">
-              <span className="text-secondary relative text-lg font-normal">
+        <div className="mt-14 flex w-[30%] flex-col gap-6 2xl:flex-1">
+          <SectionHeader
+            title="Our Global Presence"
+            description={
+              <>
                 Connect with one of our global offices...
-                <br /> or feel free to just send us a nifty postcard. We won&apos;t
-                mind!
-              </span>
-            </div>
-            <div className="flex justify-start">
-              <div className="flex w-[320px] flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow">
-                {regions.map((region, index) => (
-                  <React.Fragment key={region}>
-                    <button
-                      className={cn(
-                        "w-full cursor-pointer px-4 py-2.5 text-left text-[22px] font-bold transition-colors",
-                        region === continent
-                          ? "bg-primary text-white"
-                          : "bg-white text-gray-800",
-                      )}
-                      onClick={() => {
-                        setContinent(region);
-                      }}
-                    >
-                      {region}
-                    </button>
-                    {index < regions.length - 1 && (
-                      <hr className="border-gray-200" />
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-          </div>
+                <br />
+                or feel free to just send us a nifty postcard. We won't mind!
+              </>
+            }
+            align="start"
+          />
+          <RegionSelector
+            regions={regions}
+            continent={continent}
+            setContinent={setContinent}
+          />
         </div>
       </div>
       <div className="absolute z-50 hidden h-full flex-col items-center justify-center gap-2 lg:top-10 lg:left-1 lg:flex xl:top-10 xl:left-36 2xl:top-0 2xl:left-36">
-        <button
-          className={cn(
-            "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
-            {
-              "cursor-not-allowed opacity-50": activeIndex === 0,
-              "bg-primary opacity-100": activeIndex !== 0,
-            },
-          )}
-          style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
+        <NavButton
+          disabled={activeIndex === 0}
           onClick={handlePrev}
-        >
-          <BsArrowUpShort
-            size={32}
-            color={activeIndex !== 0 ? "white" : "black"}
-          />
-        </button>
-        <button
-          className={cn(
-            "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
-            {
-              "cursor-not-allowed opacity-50": activeIndex >= totalSlides - 3,
-              "bg-primary opacity-100": activeIndex < totalSlides - 3,
-            },
-          )}
-          style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
-          onClick={handleNext}
+          icon={
+            <BsArrowUpShort
+              size={32}
+              color={activeIndex !== 0 ? "white" : "black"}
+            />
+          }
+        />
+        <NavButton
           disabled={activeIndex >= totalSlides - 3}
-        >
-          <BsArrowDownShort
-            size={32}
-            color={activeIndex < totalSlides - 3 ? "white" : "black"}
-          />
-        </button>
+          onClick={handleNext}
+          icon={
+            <BsArrowDownShort
+              size={32}
+              color={activeIndex < totalSlides - 3 ? "white" : "black"}
+            />
+          }
+        />
       </div>
 
       {/* mobile and Tablet screen */}
       <div className="flex flex-col gap-10 lg:hidden">
-        <div className="mt-14 lg:flex-1">
-          <div className="flex w-full flex-col gap-6">
-            <div className="flex flex-col items-center justify-center gap-5">
-              <div
-                className={cn(
-                  "text-[35px] leading-none font-semibold capitalize",
-                  syne.className,
-                )}
-              >
-                Our Global Presence
-              </div>
-              <HRLine1 />
-            </div>
-            <div className="text-center">
-              <span className="text-secondary relative text-lg font-normal">
+        <div className="mt-14 flex flex-col gap-6">
+          <SectionHeader
+            title="Our Global Presence"
+            description={
+              <>
                 Connect with one of our global offices...
-                <br /> or feel free to just send us a nifty postcard. We won&apos;t
-                mind!
-              </span>
-            </div>
-            <div className="flex justify-center">
-              <div className="flex w-[320px] flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow">
-                {regions.map((region, index) => (
-                  <React.Fragment key={region}>
-                    <button
-                      className={cn(
-                        "w-full cursor-pointer px-4 py-2.5 text-left text-[22px] font-bold transition-colors",
-                        region === continent
-                          ? "bg-primary text-white"
-                          : "bg-white text-gray-800",
-                      )}
-                      onClick={() => setContinent(region)}
-                    >
-                      {region}
-                    </button>
-                    {index < regions.length - 1 && (
-                      <hr className="border-gray-200" />
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-          </div>
+                <br />
+                or feel free to just send us a nifty postcard. We won't mind!
+              </>
+            }
+            align="center"
+          />
+          <RegionSelector
+            regions={regions}
+            continent={continent}
+            setContinent={setContinent}
+            isAlign
+          />
         </div>
         <div className="relative flex justify-center">
           <Slider
             ref={sliderRef}
             {...settings}
-            className="h-full w-[370px] sm:w-[500px]"
+            className="h-full w-[400px] sm:w-[500px]"
           >
             {data
               .filter(({ continent: c }) => !continent || c === continent)
@@ -1046,7 +1102,7 @@ const GlobalPresence = () => {
 
                     <div className="relative flex flex-col gap-4 text-white">
                       <div className="flex items-center justify-between">
-                        <span className="text-xl font-bold md:text-2xl lg:text-4xl">
+                        <span className="text-xl font-bold md:text-2xl">
                           {country}
                         </span>
                         <img
@@ -1070,44 +1126,30 @@ const GlobalPresence = () => {
                 );
               })}
           </Slider>
-          <div className="absolute -bottom-16 text-black">
-            <div className="flex items-center gap-x-16">
-              <button
-                className={cn(
-                  "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
-                  {
-                    "cursor-not-allowed opacity-50": activeIndexNobile === 0,
-                    "bg-primary opacity-100": activeIndexNobile !== 0,
-                  },
-                )}
-                style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
+          <div className="absolute -bottom-[75px] text-black">
+            <div className="flex items-center gap-x-9">
+              <NavButton
+                disabled={activeIndexMobile === 0}
                 onClick={() => sliderRef.current?.slickPrev()}
-              >
-                <BsArrowLeftShort
-                  size={32}
-                  color={activeIndexNobile !== 0 ? "white" : "black"}
-                />
-              </button>
-              <button
-                className={cn(
-                  "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
-                  {
-                    "cursor-not-allowed opacity-50":
-                      activeIndexNobile >= totalSlides - 3,
-                    "bg-primary opacity-100":
-                      activeIndexNobile < totalSlides - 3,
-                  },
-                )}
-                style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
+                icon={
+                  <BsArrowLeftShort
+                    size={32}
+                    color={activeIndexMobile !== 0 ? "white" : "black"}
+                  />
+                }
+              />
+              <NavButton
+                disabled={activeIndexMobile >= totalSlides - 1}
                 onClick={() => sliderRef.current?.slickNext()}
-              >
-                <BsArrowRightShort
-                  size={32}
-                  color={
-                    activeIndexNobile < totalSlides - 3 ? "white" : "black"
-                  }
-                />
-              </button>
+                icon={
+                  <BsArrowRightShort
+                    size={32}
+                    color={
+                      activeIndexMobile < totalSlides - 1 ? "white" : "black"
+                    }
+                  />
+                }
+              />
             </div>
           </div>
         </div>

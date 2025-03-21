@@ -5,9 +5,26 @@ import { useEffect, useRef, useState } from "react";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import Slider from "react-slick";
 
+const NavButton = ({ direction, onClick, disabled }) => {
+  const Icon = direction === "left" ? BsArrowLeftShort : BsArrowRightShort;
+
+  return (
+    <button
+      className={cn("cursor-pointer rounded-full p-2 transition-all", {
+        "bg-white text-black": disabled,
+        "bg-primary text-white": !disabled,
+      })}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      <Icon size={24} />
+    </button>
+  );
+};
+
 export default function CitySlider({ item, index, continent }) {
   const innerSliderRef = useRef({});
-  const showSlider = item.length > 2;
+  const showSlider = item.length > 3;
   const [innerActiveIndex, setInnerActiveIndex] = useState(0);
   const [activeCity, setActiveCity] = useState(0);
 
@@ -15,7 +32,7 @@ export default function CitySlider({ item, index, continent }) {
     dots: false,
     arrows: false,
     infinite: false,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     variableWidth: true,
     afterChange: (index) => setInnerActiveIndex(index),
@@ -23,22 +40,19 @@ export default function CitySlider({ item, index, continent }) {
   useEffect(() => {
     setActiveCity(0);
   }, [continent]);
+
+  const isFirstCity = innerActiveIndex === 0;
+  const isLastCity = innerActiveIndex === item.length - 2;
+
   return (
     <div className="flex flex-col gap-5 overflow-hidden">
       <div className="flex h-auto w-full flex-row items-center overflow-hidden">
         {showSlider && (
-          <div>
-            <button
-              className={cn("cursor-pointer rounded-full p-2", {
-                "bg-white text-black": activeCity === 0,
-                "bg-primary text-white": activeCity !== 0,
-              })}
-              onClick={() => innerSliderRef.current?.slickPrev()}
-              disabled={activeCity === 0}
-            >
-              <BsArrowLeftShort size={24} />
-            </button>
-          </div>
+          <NavButton
+            direction="left"
+            onClick={() => innerSliderRef.current?.slickPrev()}
+            disabled={isFirstCity}
+          />
         )}
         <div className="w-full overflow-hidden">
           {showSlider ? (
@@ -73,7 +87,7 @@ export default function CitySlider({ item, index, continent }) {
               })}
             </Slider>
           ) : (
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap">
               {item.map((city, i) => (
                 <div
                   key={i}
@@ -98,20 +112,25 @@ export default function CitySlider({ item, index, continent }) {
           )}
         </div>
         {showSlider && (
-          <div>
-            <button
-              className={cn("cursor-pointer rounded-full p-2", {
-                "bg-white text-black":
-                  innerActiveIndex === item[index]?.cities?.length - 1,
-                "bg-primary text-white":
-                  innerActiveIndex !== item[index]?.cities?.length - 1,
-              })}
-              onClick={() => innerSliderRef.current?.slickNext()}
-              disabled={innerActiveIndex === item[index]?.cities?.length - 1}
-            >
-              <BsArrowRightShort size={24} />
-            </button>
-          </div>
+          // <div>
+          //   <button
+          //     className={cn("cursor-pointer rounded-full p-2", {
+          //       "bg-white text-black":
+          //         innerActiveIndex === item[index]?.cities?.length - 1,
+          //       "bg-primary text-white":
+          //         innerActiveIndex !== item[index]?.cities?.length - 1,
+          //     })}
+          //     onClick={() => innerSliderRef.current?.slickNext()}
+          //     disabled={innerActiveIndex === item[index]?.cities?.length - 1}
+          //   >
+          //     <BsArrowRightShort size={24} />
+          //   </button>
+          // </div>
+          <NavButton
+            direction="right"
+            onClick={() => innerSliderRef.current?.slickNext()}
+            disabled={isLastCity}
+          />
         )}
       </div>
       <div className="flex flex-row items-start justify-start gap-4">
@@ -120,15 +139,13 @@ export default function CitySlider({ item, index, continent }) {
           <span className="text-mdfont-normal md:text-lg">
             {item[activeCity]?.address}
           </span>
-          <span className="relative inline-flex w-56 justify-end gap-2.5 rounded-full border border-white/10 bg-white/5 p-4 backdrop-blur-[32px] lg:w-fit lg:items-center lg:justify-between lg:py-2.5 lg:pr-5 lg:pl-16">
-            <img
-              src="./contact-us/presence/phone.svg"
-              className="absolute top-1/2 left-2 -translate-y-1/2"
-            />
+
+          <div className="flex w-fit items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-2">
+            <img src="./contact-us/presence/phone.svg" className="h-9 w-9" />
             <span className="text-lg text-white capitalize">
               {item[activeCity]?.contactNo}
             </span>
-          </span>
+          </div>
         </div>
       </div>
     </div>
