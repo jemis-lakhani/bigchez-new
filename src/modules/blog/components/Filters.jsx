@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React, { useState } from "react";
 
 const Filters = () => {
@@ -37,11 +38,13 @@ const Filters = () => {
         </div>
         <div className={`relative flex w-full items-center gap-5 lg:hidden`}>
           <div
-            className={`mr-auto text-2xl font-semibold uppercase transition-all duration-300 ${
-              isExpanded
-                ? "hidden translate-x-[-50px] opacity-0"
-                : "translate-x-[0px] opacity-100"
-            }`}
+            className={clsx(
+              "mr-auto text-2xl font-semibold uppercase transition-all duration-300",
+              {
+                "hidden translate-x-[-50px] opacity-0": isExpanded,
+                "translate-x-[0px] opacity-100": !isExpanded,
+              },
+            )}
             onClick={() => setIsExpanded(!isExpanded)}
           >
             Search
@@ -50,19 +53,22 @@ const Filters = () => {
           <img
             src="/search.svg"
             alt="search-icon"
-            className={`cursor-pointer transition-all duration-300 ${
-              isExpanded ? "" : "hidden"
-            }`}
+            className={clsx(
+              "cursor-pointer transition-all duration-300",
+              isExpanded ? "" : "hidden",
+            )}
             onClick={() => setIsExpanded(!isExpanded)}
           />
 
           <select
             name="categories"
-            className={`custom-select border-primary grow transform rounded-2xl border p-4 text-xl text-[#00000091] transition-all duration-200 outline-none ${
-              isExpanded
-                ? "w-full scale-100 opacity-100"
-                : "w-0 translate-x-[10px] scale-90 opacity-0"
-            }`}
+            className={clsx(
+              "custom-select border-primary grow transform rounded-2xl border p-4 text-xl text-[#00000091] transition-all duration-200 outline-none",
+              {
+                "w-full scale-100 opacity-100": isExpanded,
+                "w-0 translate-x-[10px] scale-90 opacity-0": !isExpanded,
+              },
+            )}
           >
             {categories.map((item, index) => (
               <option key={index}>{item}</option>
@@ -71,9 +77,10 @@ const Filters = () => {
           <img
             src="/search.svg"
             alt="search-icon"
-            className={`cursor-pointer transition-all duration-300 ${
-              isExpanded ? "hidden" : "opacity-100"
-            }`}
+            className={clsx(
+              "cursor-pointer transition-all duration-300",
+              isExpanded ? "hidden" : "opacity-100",
+            )}
             onClick={() => setIsExpanded(!isExpanded)}
           />
         </div>

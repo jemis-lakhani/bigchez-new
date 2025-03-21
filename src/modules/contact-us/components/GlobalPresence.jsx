@@ -937,7 +937,7 @@ const SectionHeader = ({ title, description, align = "start" }) => {
         </div>
         <HRLine1 />
       </div>
-      <div className={`text-center lg:text-${align}`}>
+      <div className={`text-${align}`}>
         <span className="text-secondary relative text-lg font-normal">
           {description}
         </span>
@@ -965,7 +965,6 @@ const GlobalPresence = () => {
     infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // variableWidth: false,
     afterChange: (current) => setActiveIndexMobile(current),
   };
 
@@ -1024,7 +1023,8 @@ const GlobalPresence = () => {
               <>
                 Connect with one of our global offices...
                 <br />
-                or feel free to just send us a nifty postcard. We won't mind!
+                or feel free to just send us a nifty postcard. We won&apos;t
+                mind!
               </>
             }
             align="start"
@@ -1068,7 +1068,8 @@ const GlobalPresence = () => {
               <>
                 Connect with one of our global offices...
                 <br />
-                or feel free to just send us a nifty postcard. We won't mind!
+                or feel free to just send us a nifty postcard. We won&apos;t
+                mind!
               </>
             }
             align="center"

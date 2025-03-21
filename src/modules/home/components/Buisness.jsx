@@ -1,12 +1,33 @@
 "use client";
 import { Button } from "@/components/ui/Button";
 import HRLine from "@/components/ui/HRLine";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { IoArrowDownCircleOutline } from "react-icons/io5";
 import BuisnessCard from "./BuisnessCard";
+import Slider from "react-slick";
+import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import { cn } from "@/lib/utils";
+const NavButton = ({ disabled, onClick, icon }) => (
+  <button
+    className={cn(
+      "cursor-pointer rounded-full border border-[#CBBEBE] bg-white p-2 transition-all",
+      {
+        "cursor-not-allowed bg-white": disabled,
+        "bg-primary opacity-100": !disabled,
+      },
+    )}
+    style={{ boxShadow: "0px 14.01px 67.27px -16.82px #00000014" }}
+    onClick={onClick}
+    disabled={disabled}
+  >
+    {icon}
+  </button>
+);
 
 const Buisness = () => {
   const [showMore, setShowMore] = useState(false);
+  const sliderRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const data = [
     {
@@ -87,6 +108,23 @@ const Buisness = () => {
     }
   };
 
+  var settings = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    infinite: true,
+    centerMode: true,
+    centerPadding: "20px",
+    autoplay: false,
+    autoplaySpeed: 3200,
+    cssEase: "linear",
+    focusOnSelect: false,
+    pauseOnDotsHover: false,
+    pauseOnHover: false,
+    touchMove: false,
+    afterChange: (current) => setActiveIndex(current),
+  };
+
   return (
     <div className="relative">
       <div
@@ -107,11 +145,50 @@ const Buisness = () => {
               <span className="font-bold">tailored solutions.</span>
             </div>
           </div>
+          <div className="relative block md:hidden">
+            <Slider ref={sliderRef} {...settings}>
+              {data?.map((item, index) => (
+                <BuisnessCard
+                  key={index}
+                  data={item}
+                  active={activeIndex === index}
+                  isSlider
+                />
+              ))}
+            </Slider>
+            <div className="absolute top-[40%] left-0">
+              <NavButton
+                disabled={activeIndex === 0}
+                onClick={() => sliderRef.current?.slickPrev()}
+                icon={
+                  <BsArrowLeftShort
+                    size={32}
+                    color={activeIndex !== 0 ? "white" : "black"}
+                  />
+                }
+              />
+            </div>
+            <div className="absolute top-[40%] right-0">
+              <NavButton
+                disabled={activeIndex >= data.length - 1}
+                onClick={() => sliderRef.current?.slickNext()}
+                icon={
+                  <BsArrowRightShort
+                    size={32}
+                    color={activeIndex < data.length - 1 ? "white" : "black"}
+                  />
+                }
+              />
+            </div>
+          </div>
           {data?.slice(0, showMore ? data.length : 5)?.map((item, index) => (
-            <BuisnessCard key={index} data={item} />
+            <BuisnessCard key={index} data={item} className="hidden md:block" />
           ))}
         </div>
-        <Button className="btn-h-86" onClick={handleToggle}>
+        <Button
+          className="btn-h-86 invisible md:visible"
+          onClick={handleToggle}
+        >
           {showMore ? "Show Less" : "Show More"}
           <IoArrowDownCircleOutline
             size={32}
@@ -119,6 +196,7 @@ const Buisness = () => {
           />
         </Button>
       </div>
+
       <div className="absolute bottom-0">
         <img src="./journals/top-curve.png" className="w-full" />
       </div>
