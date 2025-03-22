@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/Button";
 import { useRouter } from "next/navigation";
 
-const itemClasses = "text-lg";
+const itemClasses = "text-lg cursor-pointer";
 
 const Footer = ({ title, btnTxt, btnLink }) => {
   const router = useRouter();

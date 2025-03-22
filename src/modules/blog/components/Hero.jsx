@@ -1,5 +1,4 @@
 import Header from "@/components/global/Header";
-import Menu from "@/components/global/Menu";
 import HRLine1 from "@/components/ui/HRLine1";
 import { cn } from "@/lib/utils";
 import { Syne } from "next/font/google";
@@ -7,17 +6,8 @@ import { Syne } from "next/font/google";
 const syne = Syne({ subsets: ["latin"], display: "swap" });
 
 const Hero = () => {
-  const menuItems = [
-    {
-      title: "Impactful Stories",
-      link: "impactful-stories",
-    },
-    { title: "Blogs", link: "blogs" },
-  ];
-
   return (
     <div className="relative" id="impactful-stories">
-      <Menu menuItems={menuItems} />
       <div
         className="absolute inset-0 bg-cover"
         style={{ backgroundImage: 'url("./contact-us/bg.png")' }}

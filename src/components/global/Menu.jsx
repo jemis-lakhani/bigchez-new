@@ -1,18 +1,15 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowForward, IoMdClose } from "react-icons/io";
 
-const Menu = ({ menuItems }) => {
+const Menu = ({ menuItems, scrollToId }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedItem, setExpandedItem] = useState(null);
 
-  const handleScroll = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  useEffect(() => {
+    setExpandedItem(null);
+  }, [menuItems]);
 
   return (
     <div className="fixed top-[40%] right-0 left-auto z-40 flex flex-col">
@@ -43,8 +40,8 @@ const Menu = ({ menuItems }) => {
                     : "text-secondary",
                 )}
                 onClick={() => {
-                  handleScroll(item.link);
-                  setExpandedItem(expandedItem === index ? null : index);
+                  scrollToId(item.link);
+                  setExpandedItem(index);
                 }}
               >
                 <IoIosArrowForward size={20} />

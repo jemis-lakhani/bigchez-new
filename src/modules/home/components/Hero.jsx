@@ -1,25 +1,10 @@
 "use client";
 import Header from "@/components/global/Header";
-import Menu from "../../../components/global/Menu";
 import { Button } from "@/components/ui/Button";
 
 const Hero = () => {
-  const menuItems = [
-    {
-      title: "Transform Business",
-      link: "transform-business",
-    },
-    { title: "Impact Journals", link: "impact-journal" },
-    { title: "Promises", link: "promises" },
-    { title: "Vision", link: "vision" },
-    { title: "Affordable", link: "affordable" },
-    { title: "Careers", link: "carriers" },
-    { title: "FAQ", link: "faq" },
-  ];
-
   return (
     <div className="relative">
-      <Menu menuItems={menuItems} />
       <div
         className="absolute inset-0 object-cover"
         style={{ backgroundImage: 'url("./bg.png")' }}
