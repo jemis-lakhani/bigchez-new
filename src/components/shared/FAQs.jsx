@@ -61,7 +61,7 @@ const FAQs = () => {
             >
               <span
                 className={cn(
-                  "text-left text-sm lg:text-xl",
+                  "text-left text-[15px] lg:text-xl",
                   openIndex === index
                     ? "font-bold text-white"
                     : "text-secondary",

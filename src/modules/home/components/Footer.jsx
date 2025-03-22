@@ -133,9 +133,7 @@ const Footer = () => {
               key={index}
               className={cn(
                 "border-b border-[#E7E5EA]",
-                openIndex === index
-                  ? "rounded bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)]"
-                  : "",
+                openIndex === index ? "rounded" : "",
               )}
             >
               <button
@@ -144,16 +142,14 @@ const Footer = () => {
               >
                 <span
                   className={cn(
-                    "text-left text-[22px]",
-                    openIndex === index
-                      ? "font-bold text-white"
-                      : "text-secondary",
+                    "text-left text-[22px] font-semibold",
+                    openIndex === index ? "" : "text-secondary",
                   )}
                 >
                   {obj.title}
                 </span>
                 {openIndex === index ? (
-                  <MdOutlineKeyboardArrowUp size={30} className="text-white" />
+                  <MdOutlineKeyboardArrowUp size={30} className="" />
                 ) : (
                   <MdOutlineKeyboardArrowDown
                     size={30}
@@ -169,7 +165,7 @@ const Footer = () => {
                     : "max-h-0 scale-y-95 opacity-0 duration-300",
                 )}
               >
-                <div className="flex flex-col gap-3 p-2 pb-4 text-lg text-white">
+                <div className="flex flex-col gap-6 p-2 pb-4 text-xl font-medium md:text-lg">
                   {obj?.items?.length ? (
                     obj?.items?.map((navlink, index) => (
                       <Link href={navlink?.link ?? "#"} key={index}>

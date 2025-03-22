@@ -102,8 +102,13 @@ const Buisness = () => {
     setShowMore(!showMore);
 
     if (showMore) {
-      document.getElementById("transform-business")?.scrollIntoView({
-        behavior: "smooth",
+      const target = document.getElementById("transform-business");
+      if (!target) return;
+
+      const offset = target.getBoundingClientRect().top + window.scrollY;
+
+      window.scrollTo({
+        top: offset,
       });
     }
   };
