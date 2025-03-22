@@ -53,16 +53,19 @@ const ChatWithUs = () => {
       <div className="flex gap-3">
         <Link
           href="#"
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-md transition-transform hover:scale-105"
+          className="flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[#25D366] shadow-md transition-transform hover:scale-105 md:h-14 md:w-14"
         >
-          <img src="./footer/whatsapp.svg" />
+          <img src="./footer/whatsapp.svg" className="scale-110 md:scale-100" />
         </Link>
         <button
           onClick={() => setIsOpen(true)}
-          className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-[#09748D] shadow-md transition-transform hover:scale-105"
+          className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center rounded-full bg-[#09748D] shadow-md transition-transform hover:scale-105 md:h-14 md:w-14"
           aria-label="Chat"
         >
-          <img src="./footer/chat-with-us.svg" />
+          <img
+            src="./footer/chat-with-us.svg"
+            className="scale-110 md:scale-100"
+          />
         </button>
       </div>
     </div>
