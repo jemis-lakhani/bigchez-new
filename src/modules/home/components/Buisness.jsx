@@ -136,7 +136,7 @@ const Buisness = () => {
         id="transform-business"
         className="bg-secondary flex flex-col items-center gap-20 py-16 lg:py-32"
       >
-        <div className="main-container flex grid-cols-1 flex-col space-y-14 gap-x-20 md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-x-16">
+        <div className="main-container flex grid-cols-1 flex-col space-y-14 gap-x-20 md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-x-16 2xl:gap-x-20">
           <div className="flex flex-col justify-center gap-5">
             <div className="text-5xl xl:text-4xl 2xl:text-5xl 2xl:leading-[60px]">
               <span className="font-bold">Transform Your</span>

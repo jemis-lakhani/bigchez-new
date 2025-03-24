@@ -13,8 +13,8 @@ const BuisnessCard = ({
       className={clsx(
         "border-secondary relative mx-2 rounded-[30px] border bg-white hover:!border-[var(--primary)] lg:mx-0 lg:py-5 2xl:py-8",
         {
-          "mx-4 h-[300px]": isSlider,
-          "group h-[350px]": !isSlider,
+          "mx-4 h-[310px]": isSlider,
+          "group h-[310px] 2xl:h-[370px]": !isSlider,
           "!border-[var(--primary)]": active,
         },
         className,
