@@ -13,10 +13,10 @@ const Hero = () => {
         className="absolute inset-0 object-cover"
         style={{ backgroundImage: 'url("./bg-2.png")' }}
       ></div>
-      <div className="main-container relative z-30 flex flex-col pt-4">
+      <div className="main-container relative z-30 flex min-h-[80vh] flex-col pt-4">
         <Header />
-        <div className="relative mx-auto flex flex-col items-center gap-20 py-24 text-center 2xl:w-[75%]">
-          <div className="mx-2 text-[4.5rem] leading-none capitalize lg:mx-0 lg:text-[7.5rem]">
+        <div className="relative mx-auto my-auto flex flex-col items-center gap-24 py-24 text-center 2xl:w-[75%]">
+          <div className="mx-2 flex-1 text-[4.5rem] leading-none capitalize lg:mx-0 lg:text-[7.5rem]">
             <span
               className="flex flex-wrap justify-center font-extrabold text-[#16072F]"
               style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}

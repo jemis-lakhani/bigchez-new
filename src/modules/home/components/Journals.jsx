@@ -44,7 +44,7 @@ const Journals = () => {
     centerMode: true,
     centerPadding: "60px",
     autoplay: true,
-    autoplaySpeed: 3200,
+    autoplaySpeed: 6000,
     cssEase: "linear",
     responsive: [
       {
