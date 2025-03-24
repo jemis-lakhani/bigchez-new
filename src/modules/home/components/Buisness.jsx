@@ -119,7 +119,7 @@ const Buisness = () => {
     dots: false,
     infinite: true,
     centerMode: true,
-    centerPadding: "20px",
+    centerPadding: "50px",
     autoplay: false,
     autoplaySpeed: 3200,
     cssEase: "linear",
@@ -127,6 +127,44 @@ const Buisness = () => {
     pauseOnDotsHover: false,
     pauseOnHover: false,
     touchMove: false,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: { centerPadding: "140px" },
+      },
+      {
+        breakpoint: 700,
+        settings: { centerPadding: "120px" },
+      },
+      {
+        breakpoint: 650,
+        settings: { centerPadding: "100px" },
+      },
+      {
+        breakpoint: 600,
+        settings: { centerPadding: "85px" },
+      },
+      {
+        breakpoint: 550,
+        settings: { centerPadding: "75px" },
+      },
+      {
+        breakpoint: 500,
+        settings: { centerPadding: "55px" },
+      },
+      {
+        breakpoint: 450,
+        settings: { centerPadding: "40px" },
+      },
+      {
+        breakpoint: 400,
+        settings: { centerPadding: "30px" },
+      },
+      {
+        breakpoint: 350,
+        settings: { centerPadding: "15px" },
+      },
+    ],
     afterChange: (current) => setActiveIndex(current),
   };
 
