@@ -24,7 +24,7 @@ const Hero = () => {
               <span className="relative">
                 Your&nbsp;
                 <span className="absolute -top-8 -left-10 lg:-top-4">
-                  <img src="/lines.png" />
+                  <img src="/lines.png" alt="lines" />
                 </span>
               </span>
               needs
@@ -43,7 +43,7 @@ const Hero = () => {
               >
                 Design
                 <span className="absolute right-0 -bottom-2 -z-1">
-                  <img src="/lines-2.png" />
+                  <img src="/lines-2.png" alt="lines-2" />
                 </span>
               </span>
             </span>

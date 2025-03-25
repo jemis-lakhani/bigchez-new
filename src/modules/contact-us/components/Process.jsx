@@ -31,7 +31,7 @@ const Process = () => {
             className="group relative mx-5 flex h-full flex-col items-center justify-center rounded-[20px] bg-white px-5 pt-24 pb-10 shadow-[0px_10px_35px_0px_rgba(93,72,223,0.08)] lg:mx-0"
           >
             <div className="absolute top-0 left-1/2 z-10 flex h-36 w-36 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white p-5 shadow-[0px_4px_4px_0px_rgba(236,234,234,0.25)]">
-              <img src={item.icon} />
+              <img src={item.icon} alt={item.title} />
             </div>
             <div
               className="absolute inset-0 rounded-[20px] opacity-0 transition-all duration-300 group-hover:opacity-100"
@@ -55,7 +55,11 @@ const Process = () => {
         ))}
       </div>
       <div className="absolute bottom-0">
-        <img src="./contact-us/process/bottom-vector.png" className="w-full" />
+        <img
+          src="./contact-us/process/bottom-vector.png"
+          className="w-full"
+          alt="process"
+        />
       </div>
     </div>
   );

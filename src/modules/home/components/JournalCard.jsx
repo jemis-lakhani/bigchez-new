@@ -16,7 +16,11 @@ const JournalCard = ({ data, index, activeIndex, isSlider = false }) => {
       <div className="absolute inset-0 rounded-3xl bg-[linear-gradient(96.26deg,#0993AB_0%,#09748D_50%)] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></div>
       <div className="relative rounded-2xl border-[2px] border-white">
         <div className="h-full overflow-hidden rounded-2xl">
-          <img src={data?.image} className="h-full w-full object-cover" />
+          <img
+            src={data?.image}
+            alt={data?.badgeTitle}
+            className="h-full w-full object-cover"
+          />
         </div>
 
         <div className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-1/2 rounded-full bg-white p-px font-semibold">

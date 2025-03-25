@@ -7,6 +7,7 @@ const BlogCard = ({ data }) => {
       <div className="relative h-[140px] lg:h-[257px]">
         <img
           src="/blog/blog-img.png"
+          alt="Blog post image"
           className="h-full w-full rounded-lg bg-cover bg-center object-cover lg:rounded-[15px]"
         />
         <div className="border-primary absolute bottom-3 left-3 flex items-center rounded-3xl border bg-white p-1 lg:bottom-5 lg:left-5 lg:p-1.5">
@@ -19,6 +20,7 @@ const BlogCard = ({ data }) => {
       <div className="mt-2 flex justify-start gap-4">
         <div className="flex items-center justify-center gap-2">
           <svg
+            aria-hidden="true"
             width="14"
             height="16"
             viewBox="0 0 14 16"
@@ -60,6 +62,7 @@ const BlogCard = ({ data }) => {
         </div>
         <div className="flex items-center gap-2">
           <svg
+            aria-hidden="true"
             width="15"
             height="16"
             viewBox="0 0 15 16"

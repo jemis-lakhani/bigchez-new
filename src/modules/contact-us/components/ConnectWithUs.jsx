@@ -28,8 +28,10 @@ const ConnectWithUs = () => {
           "relative flex aspect-square w-20 items-center justify-center gap-2.5 rounded-full p-4 backdrop-blur-[32px] lg:aspect-auto lg:w-full lg:p-4",
           index === 0 ? "bg-primary" : "bg-white/10",
         )}
+        role="button"
+        tabIndex={0}
       >
-        <img src={data?.icon} />
+        <img src={data?.icon} alt={data?.title} />
         <span className="hidden text-lg font-semibold text-white capitalize lg:block">
           {data?.title}
         </span>

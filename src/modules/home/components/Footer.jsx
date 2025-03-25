@@ -195,29 +195,49 @@ const Footer = () => {
 
         <div className="flex flex-col gap-8">
           <div className="flex justify-center gap-5">
-            <img src="./footer/twitter.svg" />
-            <img src="./footer/linkedin.svg" />
-            <img src="./footer/fb.svg" />
+            <img src="./footer/twitter.svg" alt="twitter" />
+            <img src="./footer/linkedin.svg" alt="linkedin" />
+            <img src="./footer/fb.svg" alt="facebook" />
           </div>
           <div className="flex flex-wrap justify-center gap-3">
-            <span className={itemClasses} onClick={() => router.push("/")}>
+            <span
+              className={itemClasses}
+              role="link"
+              tabIndex={0}
+              onClick={() => router.push("/")}
+              onKeyDown={(e) => e.key === "Enter" && router.push("/")}
+            >
               Bigchez Home
             </span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>
             <span
               className={itemClasses}
+              role="link"
+              tabIndex={0}
               onClick={() => router.push("contact-us")}
+              onKeyDown={(e) => e.key === "Enter" && router.push("contact-us")}
             >
               Contact Us
             </span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>
-            <span className={itemClasses} onClick={() => router.push("/blog")}>
+            <span
+              className={itemClasses}
+              role="link"
+              tabIndex={0}
+              onClick={() => router.push("/blog")}
+              onKeyDown={(e) => e.key === "Enter" && router.push("/blog")}
+            >
               Our Blog
             </span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>
-            <span className={itemClasses}> Terms of Service</span>
+            <span className={itemClasses} role="link" tabIndex={0}>
+              {" "}
+              Terms of Service
+            </span>
             <div className="h-auto w-[1px] bg-[#cccccc] font-semibold"></div>
-            <span className={itemClasses}>Privacy Policy</span>
+            <span className={itemClasses} role="link" tabIndex={0}>
+              Privacy Policy
+            </span>
           </div>
         </div>
       </div>

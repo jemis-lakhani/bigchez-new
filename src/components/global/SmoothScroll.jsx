@@ -48,8 +48,9 @@ const SmoothScroll = ({ children }) => {
   const scrollRef = useRef(null);
   const [pageHeight, setPageHeight] = useState(0);
   const [menu, setMenu] = useState(menuItems.home);
-
   const pathName = usePathname();
+
+  const usingKeyboardFocus = useRef(false);
 
   const resizePageHeight = useCallback((entries) => {
     for (let entry of entries) {
@@ -85,12 +86,50 @@ const SmoothScroll = ({ children }) => {
     if (!target) return;
 
     const offset = target.getBoundingClientRect().top + window.scrollY;
-
-    window.scrollTo({
-      top: offset,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: offset, behavior: "smooth" });
   }, []);
+
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === "Tab") {
+        usingKeyboardFocus.current = true;
+      }
+    }
+    function handleMouseDown() {
+      usingKeyboardFocus.current = false;
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleMouseDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleMouseDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    function handleFocusIn(event) {
+      if (!scrollRef.current) return;
+      if (!(event.target instanceof HTMLElement)) return;
+      if (!usingKeyboardFocus.current) return;
+
+      if (scrollRef.current.contains(event.target)) {
+        const targetRect = event.target.getBoundingClientRect();
+        const containerRect = scrollRef.current.getBoundingClientRect();
+        const offset =
+          targetRect.top - containerRect.top > 150
+            ? targetRect.top - containerRect.top - 150
+            : targetRect.top - containerRect.top;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }
+
+    document.addEventListener("focusin", handleFocusIn);
+    return () => {
+      document.removeEventListener("focusin", handleFocusIn);
+    };
+  }, [spring]);
 
   return (
     <>

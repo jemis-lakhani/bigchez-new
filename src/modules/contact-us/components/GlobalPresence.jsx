@@ -1011,6 +1011,7 @@ const GlobalPresence = () => {
                 <img
                   src="/group-line.svg"
                   className="min-h-full md:w-[50px] lg:w-[40px] xl:w-[40px] 2xl:w-[45px]"
+                  alt="group-line"
                 />
               </div>
             </div>

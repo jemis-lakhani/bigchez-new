@@ -72,16 +72,22 @@ const Blogs = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div
+    <section
       className="relative bg-gradient-to-b from-[#F8F9FD] via-[#F8F9FD] to-[#FFFFFF] pt-20 pb-32"
       id="blogs"
+      tabIndex={-1}
+      role="region"
     >
       <div className="main-container relative z-30 flex flex-col-reverse justify-between gap-12 lg:flex-row lg:gap-0">
         <div className="flex flex-[0_0_60%] flex-col items-center gap-14 lg:gap-14">
           {data?.slice(0, showMore ? data.length : 3)?.map((item, index) => {
             return <BlogCard key={index} data={item} />;
           })}
-          <Button className="btn-h-86" onClick={() => setShowMore(!showMore)}>
+          <Button
+            className="btn-h-86"
+            aria-expanded={showMore}
+            onClick={() => setShowMore(!showMore)}
+          >
             {showMore ? "View Less" : "View All"}
             <IoArrowDownCircleOutline
               size={30}
@@ -95,7 +101,7 @@ const Blogs = () => {
         </div>
         <Filters />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -7,7 +7,12 @@ const syne = Syne({ subsets: ["latin"], display: "swap" });
 
 const Hero = () => {
   return (
-    <div className="relative" id="impactful-stories">
+    <section
+      className="relative"
+      id="impactful-stories"
+      tabIndex={-1}
+      role="region"
+    >
       <div
         className="absolute inset-0 bg-cover"
         style={{ backgroundImage: 'url("./contact-us/bg.png")' }}
@@ -15,7 +20,7 @@ const Hero = () => {
       <div className="main-container relative z-30 flex flex-col pt-4">
         <Header />
         <div className="relative mx-auto flex flex-col items-center gap-8 py-14 text-center lg:py-30 xl:w-[75%]">
-          <div
+          <h1
             className={cn(
               "flex flex-wrap items-center justify-center gap-2 text-center text-4xl leading-none font-semibold lg:text-[58px]",
               syne.className,
@@ -31,11 +36,11 @@ const Hero = () => {
               ></span>
               Impactful Stories
             </span>
-          </div>
+          </h1>
           <HRLine1 />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -241,7 +241,11 @@ const Buisness = () => {
       </div>
 
       <div className="absolute bottom-0">
-        <img src="./journals/top-curve.png" className="w-full" />
+        <img
+          src="./journals/top-curve.png"
+          className="w-full"
+          alt="top-curve"
+        />
       </div>
     </div>
   );

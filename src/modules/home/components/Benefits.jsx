@@ -2,7 +2,11 @@ const Benefits = () => {
   return (
     <div className="relative">
       <div className="absolute top-0">
-        <img src="./journals/bottom-curve.png" className="w-full" />
+        <img
+          src="./journals/bottom-curve.png"
+          className="w-full"
+          alt="bottom-curve"
+        />
       </div>
       <div id="promises" className="bg-secondary py-16 lg:py-32">
         {/* Laptop Screen */}
@@ -35,22 +39,27 @@ const Benefits = () => {
             <img
               className="scale-105 2xl:scale-107"
               src="./benefits/availability.png"
+              alt="availability"
             />
             <img
               className="mt-6 scale-105 2xl:scale-107"
               src="./benefits/access.png"
+              alt="access"
             />
             <img
               className="scale-105 2xl:scale-107"
               src="./benefits/reliability.png"
+              alt="reliability"
             />
             <img
               className="mt-6 scale-105 2xl:scale-107"
               src="./benefits/communication.png"
+              alt="communication"
             />
             <img
               className="scale-105 2xl:scale-107"
               src="./benefits/tech.png"
+              alt="tech"
             />
           </div>
           <div className="mt-6 grid grid-cols-8">
@@ -87,7 +96,11 @@ const Benefits = () => {
         <div className="main-container flex flex-col gap-8 lg:hidden">
           <div className="flex gap-3">
             <div className="max-w-[158px] rotate-270">
-              <img className="scale-105" src="./benefits/availability.png" />
+              <img
+                className="scale-105"
+                src="./benefits/availability.png"
+                alt="availability"
+              />
             </div>
             <div className="flex flex-1 flex-col justify-center gap-2">
               <span className="text-blue-gradient text-left text-xl font-extrabold text-transparent">
@@ -108,12 +121,16 @@ const Benefits = () => {
               </span>
             </div>
             <div className="max-w-[158px] rotate-270">
-              <img className="" src="./benefits/access.png" />
+              <img className="" src="./benefits/access.png" alt="access" />
             </div>
           </div>
           <div className="flex gap-3">
             <div className="max-w-[158px] rotate-270">
-              <img className="scale-105" src="./benefits/reliability.png" />
+              <img
+                className="scale-105"
+                src="./benefits/reliability.png"
+                alt="reliability"
+              />
             </div>
             <div className="flex flex-1 flex-col justify-center gap-2">
               <span className="text-left text-xl font-extrabold text-[#36BBE4]">
@@ -134,12 +151,16 @@ const Benefits = () => {
               </span>
             </div>
             <div className="max-w-[158px] rotate-270">
-              <img className="" src="./benefits/communication.png" />
+              <img
+                className=""
+                src="./benefits/communication.png"
+                alt="communication"
+              />
             </div>
           </div>
           <div className="flex gap-3">
             <div className="max-w-[158px] rotate-270">
-              <img className="scale-105" src="./benefits/tech.png" />
+              <img className="scale-105" src="./benefits/tech.png" alt="tech" />
             </div>
             <div className="flex flex-1 flex-col justify-center gap-2">
               <span className="text-blue-gradient text-left text-xl font-extrabold text-transparent">

@@ -141,7 +141,11 @@ export default function CitySlider({ item, index, continent }) {
           </span>
 
           <div className="flex w-fit items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-2">
-            <img src="./contact-us/presence/phone.svg" className="h-9 w-9" />
+            <img
+              src="./contact-us/presence/phone.svg"
+              className="h-9 w-9"
+              alt="phone"
+            />
             <span className="text-lg text-white capitalize">
               {item[activeCity]?.contactNo}
             </span>
