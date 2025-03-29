@@ -13,16 +13,18 @@ const BuisnessCard = ({
       className={clsx(
         "border-secondary relative mx-2 rounded-[30px] border bg-white hover:!border-[var(--primary)] lg:mx-0 lg:py-5 2xl:py-8",
         {
-          "mx-4 h-[300px]": isSlider,
-          "group h-[275px]": !isSlider,
+          "mx-4 h-[310px]": isSlider,
+          "group h-[310px] 2xl:h-[370px]": !isSlider,
           "!border-[var(--primary)]": active,
         },
         className,
       )}
+      role="contentinfo"
+      tabIndex={0}
     >
       <div
         className={clsx(
-          "pointer-events-none absolute inset-0 rounded-[30px] bg-cover bg-center opacity-0 transition-opacity duration-500 group-hover:opacity-100",
+          "pointer-events-none absolute inset-0 rounded-[30px] bg-cover bg-center opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus:opacity-100",
           { "opacity-100": active },
         )}
         style={{
@@ -31,7 +33,7 @@ const BuisnessCard = ({
       ></div>
       <div
         className={clsx(
-          "absolute inset-0 rounded-[30px] opacity-0 transition-all duration-300 group-hover:opacity-90",
+          "absolute inset-0 rounded-[30px] opacity-0 transition-all duration-300 group-hover:opacity-90 group-focus:opacity-90",
           { "opacity-90": active },
         )}
         style={{
@@ -40,8 +42,9 @@ const BuisnessCard = ({
       ></div>
       <img
         src="./arrow-up-purple.svg"
+        alt="arrow-up-purple"
         className={clsx(
-          "text-secondary-1 absolute top-4 right-4 group-hover:hidden",
+          "text-secondary-1 absolute top-4 right-4 group-hover:hidden group-focus:hidden",
           active ? "hidden" : "",
         )}
         style={
@@ -55,7 +58,7 @@ const BuisnessCard = ({
       <div className="relative z-10 flex h-full flex-1 flex-col items-center justify-center gap-6">
         <div
           className={clsx(
-            "flex h-10 group-hover:hidden",
+            "flex h-10 group-hover:hidden group-focus:hidden",
             active ? "hidden" : "",
           )}
           style={
@@ -69,9 +72,10 @@ const BuisnessCard = ({
           <div className="invisible"></div>
         </div>
         <img
+          alt="buisness-icon"
           src={data?.icon}
           className={clsx(
-            "object-contain group-hover:hidden",
+            "object-contain group-hover:hidden group-focus:hidden",
             active ? "hidden" : "",
           )}
           style={
@@ -83,9 +87,10 @@ const BuisnessCard = ({
           }
         />
         <img
+          alt="buisness-hover-icon"
           src={data?.hoverIcon}
           className={clsx(
-            "object-contain group-hover:block",
+            "object-contain group-hover:block group-focus:block",
             active ? "block" : "hidden",
           )}
           style={
@@ -98,7 +103,7 @@ const BuisnessCard = ({
         />
         <span
           className={clsx(
-            "text-secondary-1 text-2xl font-bold group-hover:!text-white",
+            "text-secondary-1 text-2xl font-bold group-hover:!text-white group-focus:!text-white",
             { "!text-white": active },
           )}
         >
@@ -107,9 +112,11 @@ const BuisnessCard = ({
         <div className="flex h-12 items-center justify-center">
           <Button
             className={clsx(
-              "invisible !font-medium opacity-0 transition-opacity duration-300 group-hover:visible group-hover:opacity-100",
+              "invisible !font-medium opacity-0 transition-opacity duration-300 group-hover:visible group-hover:opacity-100 group-focus:visible group-focus:opacity-100",
               { "visible opacity-100": active },
             )}
+            role="button"
+            tabIndex={0}
           >
             Read More
             <BsArrowUpRightCircle className="h-5 w-5 font-bold text-white" />

@@ -102,8 +102,13 @@ const Buisness = () => {
     setShowMore(!showMore);
 
     if (showMore) {
-      document.getElementById("transform-business")?.scrollIntoView({
-        behavior: "smooth",
+      const target = document.getElementById("transform-business");
+      if (!target) return;
+
+      const offset = target.getBoundingClientRect().top + window.scrollY;
+
+      window.scrollTo({
+        top: offset,
       });
     }
   };
@@ -114,7 +119,7 @@ const Buisness = () => {
     dots: false,
     infinite: true,
     centerMode: true,
-    centerPadding: "20px",
+    centerPadding: "50px",
     autoplay: false,
     autoplaySpeed: 3200,
     cssEase: "linear",
@@ -122,6 +127,44 @@ const Buisness = () => {
     pauseOnDotsHover: false,
     pauseOnHover: false,
     touchMove: false,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: { centerPadding: "140px" },
+      },
+      {
+        breakpoint: 700,
+        settings: { centerPadding: "120px" },
+      },
+      {
+        breakpoint: 650,
+        settings: { centerPadding: "100px" },
+      },
+      {
+        breakpoint: 600,
+        settings: { centerPadding: "85px" },
+      },
+      {
+        breakpoint: 550,
+        settings: { centerPadding: "75px" },
+      },
+      {
+        breakpoint: 500,
+        settings: { centerPadding: "55px" },
+      },
+      {
+        breakpoint: 450,
+        settings: { centerPadding: "40px" },
+      },
+      {
+        breakpoint: 400,
+        settings: { centerPadding: "30px" },
+      },
+      {
+        breakpoint: 350,
+        settings: { centerPadding: "15px" },
+      },
+    ],
     afterChange: (current) => setActiveIndex(current),
   };
 
@@ -131,7 +174,7 @@ const Buisness = () => {
         id="transform-business"
         className="bg-secondary flex flex-col items-center gap-20 py-16 lg:py-32"
       >
-        <div className="main-container flex grid-cols-1 flex-col gap-7 md:grid md:grid-cols-2 md:gap-8 xl:grid-cols-3 2xl:gap-12">
+        <div className="main-container flex grid-cols-1 flex-col space-y-14 gap-x-20 md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-x-16 2xl:gap-x-20">
           <div className="flex flex-col justify-center gap-5">
             <div className="text-5xl xl:text-4xl 2xl:text-5xl 2xl:leading-[60px]">
               <span className="font-bold">Transform Your</span>
@@ -198,7 +241,11 @@ const Buisness = () => {
       </div>
 
       <div className="absolute bottom-0">
-        <img src="./journals/top-curve.png" className="w-full" />
+        <img
+          src="./journals/top-curve.png"
+          className="w-full"
+          alt="top-curve"
+        />
       </div>
     </div>
   );

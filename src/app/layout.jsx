@@ -13,6 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata = {
   title: "Bigchez",
+  description: "Your needs our Design",
 };
 
 export default function RootLayout({ children }) {

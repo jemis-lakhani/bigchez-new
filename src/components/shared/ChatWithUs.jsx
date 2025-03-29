@@ -30,7 +30,11 @@ const ChatWithUs = () => {
         <div className="relative mb-4 max-w-xs rounded-lg bg-white px-3 py-4 shadow-lg">
           <div className="flex items-start gap-3">
             <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full">
-              <img src="./footer/user.png" className="h-full w-full" />
+              <img
+                src="./footer/user.png"
+                className="h-full w-full"
+                alt="footer-user"
+              />
             </div>
             <div className="flex-1">
               <p className="text-[#344054]">
@@ -53,16 +57,24 @@ const ChatWithUs = () => {
       <div className="flex gap-3">
         <Link
           href="#"
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-md transition-transform hover:scale-105"
+          className="flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[#25D366] shadow-md transition-transform hover:scale-105 md:h-14 md:w-14"
         >
-          <img src="./footer/whatsapp.svg" />
+          <img
+            src="./footer/whatsapp.svg"
+            className="scale-110 md:scale-100"
+            alt="footer-whatsapp"
+          />
         </Link>
         <button
           onClick={() => setIsOpen(true)}
-          className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-[#09748D] shadow-md transition-transform hover:scale-105"
+          className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center rounded-full bg-[#09748D] shadow-md transition-transform hover:scale-105 md:h-14 md:w-14"
           aria-label="Chat"
         >
-          <img src="./footer/chat-with-us.svg" />
+          <img
+            src="./footer/chat-with-us.svg"
+            className="scale-110 md:scale-100"
+            alt="footer-chat-with-us"
+          />
         </button>
       </div>
     </div>

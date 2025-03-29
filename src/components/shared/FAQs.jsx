@@ -57,11 +57,11 @@ const FAQs = () => {
           >
             <button
               onClick={() => toggleAccordion(index)}
-              className="flex w-full cursor-pointer items-center justify-between gap-2 p-2 focus:outline-none lg:p-5"
+              className="flex w-full cursor-pointer items-center justify-between gap-2 p-2 focus:outline-1 lg:p-5"
             >
               <span
                 className={cn(
-                  "text-left text-sm lg:text-xl",
+                  "text-left text-[15px] lg:text-xl",
                   openIndex === index
                     ? "font-bold text-white"
                     : "text-secondary",
@@ -69,7 +69,10 @@ const FAQs = () => {
               >
                 {item.title}
               </span>
-              <img src={openIndex === index ? "./minus.svg" : "./plus.svg"} />
+              <img
+                src={openIndex === index ? "./minus.svg" : "./plus.svg"}
+                alt="minus-plus"
+              />
             </button>
 
             <div

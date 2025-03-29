@@ -6,7 +6,7 @@ const Copytight = () => {
         style={{ backgroundImage: 'url("./footer/bg.jpeg' }}
       ></div>
       <div className="relative flex flex-col items-center gap-5 py-6">
-        <img src="./logo-without-text.png" />
+        <img src="./logo-without-text.png" alt="logo-without-text" />
         <span className="text-center text-white">
           © 2025, Bigchez private limited. All Rights Reserved.
         </span>

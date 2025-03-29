@@ -44,7 +44,7 @@ const Journals = () => {
     centerMode: true,
     centerPadding: "60px",
     autoplay: true,
-    autoplaySpeed: 3200,
+    autoplaySpeed: 6000,
     cssEase: "linear",
     responsive: [
       {
@@ -121,7 +121,7 @@ const Journals = () => {
               <span className="text-secondary-1">&nbsp;Impact Journals</span>
             </span>
             <div className="flex flex-1 items-start justify-end lg:hidden">
-              <img src="arrow-up-orange.svg" />
+              <img src="arrow-up-orange.svg" alt="arrow-up-orange" />
             </div>
           </span>
           <HRLine className="w-[88px] lg:w-[162px]" />
@@ -132,7 +132,7 @@ const Journals = () => {
           </span>
         </div>
         <div className="hidden flex-1 items-start justify-end lg:flex">
-          <img src="arrow-up-orange.svg" />
+          <img src="arrow-up-orange.svg" alt="arrow-up-orange" />
         </div>
       </div>
       <div className="journal-grid gap-4 md:grid md:grid-cols-3 lg:grid-cols-3 lg:gap-5 2xl:gap-5">
