@@ -1058,7 +1058,6 @@ const GlobalPresence = () => {
           }
         />
       </div>
-
       {/* mobile and Tablet screen */}
       <div className="flex flex-col gap-10 lg:hidden">
         <div className="mt-14 flex flex-col gap-6">
